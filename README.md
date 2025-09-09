@@ -4,7 +4,7 @@ A Hugo site using the [Hextra](https://github.com/imfing/hextra) theme, built wi
 
 ## 🚀 Live Site
 
-The site is automatically deployed to GitHub Pages: https://superterran.github.io/adobe-digest
+The site is automatically deployed to GitHub Pages with custom domain: https://adobedigest.com
 
 ## 🏗️ Development
 
@@ -31,7 +31,7 @@ The site is automatically deployed to GitHub Pages: https://superterran.github.i
    hugo server --buildDrafts
    ```
 
-4. Open your browser to `http://localhost:1313/adobe-digest/`
+4. Open your browser to `http://localhost:1313/`
 
 ### Building
 
