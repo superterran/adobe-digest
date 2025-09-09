@@ -1,7 +1,6 @@
 baseURL = "https://superterran.github.io/adobe-digest"
 languageCode = "en-us"
 title = "Adobe Digest"
-theme = "hextra"
 
 # Enable Hugo modules
 [module]
@@ -11,19 +10,22 @@ theme = "hextra"
 # Hextra theme configuration
 [params]
   # Navbar configuration
-  navbar = true
+  [params.navbar]
+    displayTitle = true
+    displayLogo = false
+    width = "wide" # Can be "normal", "wide", or "full"
   
   # Footer configuration
-  footer = true
+  [params.footer]
+    enable = true
   
   # Enable search
-  search = true
+  [params.search]
+    enable = true
   
   # Enable edit page links
-  editPage = true
-  
-  # Repository information for edit links
   [params.editPage]
+    enable = true
     repository = "https://github.com/superterran/adobe-digest"
     branch = "main"
     path = "content"

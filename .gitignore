@@ -1,0 +1,33 @@
+# Hugo build outputs
+/public/
+/resources/
+/_gen/
+hugo_stats.json
+
+# Hugo cache
+/.hugo_build.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+
+# Dependency directories
+node_modules/
+
+# Hugo module cache (this is handled by go mod)
+# The theme files are downloaded to ~/.cache/hugo_cache/modules/
