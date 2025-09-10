@@ -1,0 +1,16 @@
+{
+  "name": "adobe-digest-scraper",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Scrapes Adobe and related security bulletins and writes Markdown to the Hugo content directory.",
+  "scripts": {
+    "scrape": "node scrape.js",
+    "lint": "echo 'no lint configured'"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "undici": "^6.19.8",
+    "yaml": "^2.5.0"
+  }
+}

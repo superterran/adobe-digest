@@ -42,6 +42,11 @@ title = "Adobe Digest"
     url = "/about/"
     weight = 2
 
+  [[menu.main]]
+    name = "Bulletins"
+    url = "/bulletins/"
+    weight = 3
+
 # Markup configuration for code highlighting
 [markup]
   [markup.goldmark]
