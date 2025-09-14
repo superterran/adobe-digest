@@ -1,20 +1,44 @@
 # Adobe Security Digest
 
-A **clean, reliable approach** to Adobe Security Bulletins - manually curated database that generates Hugo content, RSS feeds, and a comprehensive security tracking website.
+> **Professional Adobe Security Bulletin Aggregation & Distribution Platform**
 
-## 🎯 Why This Approach?
+A comprehensive, automated solution for tracking, organizing, and distributing Adobe security bulletins. Built with reliability and accessibility in mind, Adobe Security Digest provides clean RSS feeds, searchable content, and organized product-specific security advisories.
 
-Adobe's Akamai CDN aggressively blocks automated scrapers, making traditional scraping unreliable. Our manual curation approach provides:
+**� Live Site**: [adobedigest.com](https://adobedigest.com)
 
-- ✅ **100% Reliable** - No CDN blocking or timeout issues
-- ✅ **Rich Content** - Full Hugo pages for each bulletin  
-- ✅ **Multiple Formats** - Website, RSS feeds, JSON data
-- ✅ **Easy Updates** - Simple JSON input, automated generation
-- ✅ **GitHub Actions** - Automated workflows for content management
+---
+
+## Overview
+
+Adobe Security Digest solves the challenge of reliably accessing Adobe's security bulletin data by using a multi-strategy automated scraper combined with professional content generation. The platform provides:
+
+### ✨ **Key Features**
+- **📡 Automated Scraping** - Multi-strategy approach handles Adobe's dynamic content
+- **🔍 Product Organization** - Security advisories organized by Adobe product  
+- **📰 RSS Feeds** - Global and product-specific RSS feeds for all bulletins
+- **🏗️ Static Site Generation** - Fast, reliable Hugo-based website
+- **⚡ GitHub Actions** - Fully automated updates and deployments
+- **📊 Comprehensive Coverage** - 150+ security bulletins across 35+ Adobe products
+
+### 🎯 **Why Adobe Security Digest?**
+- **Reliability** - Automated scraping with fallback strategies
+- **Accessibility** - Clean, searchable interface with RSS feeds
+- **Organization** - Bulletins grouped by product for targeted monitoring
+- **Automation** - Updates every 6 hours via GitHub Actions
+- **Open Source** - Transparent, community-driven development
 
 ## 🚀 Quick Start
 
-### Local Development
+### For Users
+
+**RSS Feeds**: Subscribe to security updates for specific Adobe products or all products:
+- **All Products**: `https://adobedigest.com/adobe-security.xml`
+- **Products Overview**: `https://adobedigest.com/feeds/products.xml`
+- **Specific Products**: `https://adobedigest.com/feeds/{product-name}.xml`
+
+**Website**: Browse and search security bulletins at [adobedigest.com](https://adobedigest.com)
+
+### For Developers
 
 ```bash
 # Clone and setup
@@ -22,127 +46,147 @@ git clone https://github.com/superterran/adobe-digest.git
 cd adobe-digest
 go mod download
 
-# Generate all content from database
-go run cmd/content-generator/main.go generate
+# Run automated scraper
+just scrape
 
-# Build and serve Hugo site  
-hugo server --port 1314
+# Generate content and serve locally
+just dev
 ```
 
-### Adding New Bulletins
-
-Via GitHub Actions (Recommended):
-1. Go to **Actions** → **Update Adobe Security Content**
-2. Click **Run workflow**
-3. Paste bulletin JSON:
-
-```json
-{
-  "apsb": "APSB24-XX",
-  "title": "Security update available for Adobe Commerce",
-  "description": "Adobe has released security updates resolving vulnerabilities.",
-  "url": "https://helpx.adobe.com/security/products/magento/apsb24-xx.html", 
-  "date": "2024-12-01T00:00:00Z",
-  "products": ["Adobe Commerce", "Magento Open Source"],
-  "severity": "Critical"
-}
+**Using Just Commands:**
+```bash
+just scrape          # Run automated scraper
+just run             # Start Hugo development server  
+just dev             # Clean and start dev server
+just clean-all       # Clean all generated content
 ```
-
-## 📊 Generated Content
-
-The content generator creates:
-
-### Hugo Pages
-- **Individual Bulletins** (`/bulletins/apsb24-xx/`) - Detailed pages for each bulletin
-- **Product Pages** (`/products/adobe-commerce/`) - Bulletins grouped by product  
-- **Index Pages** (`/bulletins/`) - Overview and navigation
-- **Homepage Data** - Dynamic statistics and recent bulletins
-
-### RSS Feeds  
-- **Main Feed** (`/adobe-security.xml`) - All bulletins in RSS 2.0 format
-
-### Data Files
-- **Homepage JSON** (`data/homepage.json`) - Statistics for Hugo templates
-- **Database** (`data/security-bulletins.json`) - Master bulletin database
 
 ## 🏗️ Architecture
 
+### Multi-Strategy Automated Scraper
+The `adobe-scraper` employs multiple strategies to reliably extract bulletin data:
+
+1. **API Discovery** - Attempts to find Adobe's bulletin API endpoints
+2. **Alternative URLs** - Uses Adobe's JSON-format security bulletin URLs  
+3. **Enhanced HTML Parsing** - Intelligent content extraction from web pages
+4. **Browser Automation** - Handles JavaScript-heavy dynamic content
+
+### Content Generation Pipeline
 ```
-├── cmd/content-generator/     # Main content generation tool
+Adobe Security Page → Scraper → Database → Content Generator → Hugo Site
+                                    ↓
+                              RSS Feeds (39 feeds)
+```
+
+### Generated Content
+
+**🌐 Website Content:**
+- **Individual Bulletins** (`/bulletins/apsb25-xx/`) - Detailed security advisory pages
+- **Product Pages** (`/products/adobe-photoshop/`) - Product-specific bulletin collections
+- **Homepage** - Statistics, recent bulletins, and navigation
+- **Search & Browse** - Organized access to all security advisories
+
+**📡 RSS Feeds:**
+- **Global Feed** (`/adobe-security.xml`) - 25 most recent bulletins
+- **Products Feed** (`/feeds/products.xml`) - 50 recent bulletins organized by product
+- **38 Product-Specific Feeds** (`/feeds/{product}.xml`) - Dedicated feeds per Adobe product
+
+**📊 Data:**
+- **Master Database** (`data/security-bulletins.json`) - Structured bulletin data
+- **Automated Caching** - Intelligent scraping with duplicate prevention
+
+## 🔧 Development
+
+### Project Structure
+```
+├── cmd/
+│   ├── adobe-scraper/          # Multi-strategy bulletin scraper
+│   ├── content-generator/      # Hugo content and RSS generation
+│   └── bulk-importer/          # Bulk data import utilities
 ├── data/
-│   ├── security-bulletins.json   # Master database (manual)  
-│   └── homepage.json             # Generated homepage data
-├── content/
-│   ├── bulletins/                # Generated bulletin pages
-│   └── products/                 # Generated product pages  
-├── layouts/                      # Hugo templates
-└── public/
-    └── adobe-security.xml        # Generated RSS feed
+│   └── security-bulletins.json # Master bulletin database
+├── content/                    # Generated Hugo content
+├── layouts/                    # Hugo templates and overrides
+├── public/                     # Generated static site and RSS feeds
+└── .github/workflows/          # Automated CI/CD pipelines
 ```
 
-## 🛠️ Commands
+### Commands
 
+**Just Commands** (Recommended):
 ```bash
-# Generate all content from database
+just scrape          # Run automated scraper
+just run             # Start development server
+just dev             # Clean and start development server  
+just clean-all       # Remove all generated content
+```
+
+**Direct Go Commands**:
+```bash
+# Run scraper (multiple modes)
+go run cmd/adobe-scraper/main.go auto
+go run cmd/adobe-scraper/main.go manual
+go run cmd/adobe-scraper/main.go test
+
+# Generate all content
 go run cmd/content-generator/main.go generate
-
-# Add new bulletin and regenerate 
-go run cmd/content-generator/main.go add '{"apsb":"APSB24-XX",...}'
-
-# Clean all generated content
-go run cmd/content-generator/main.go clean
 
 # Build Hugo site
 hugo --minify
-
-# Serve locally
-hugo server --port 1314
 ```
 
-## 🔄 Automation
+## ⚙️ Automation & Deployment
 
-### GitHub Actions Workflow
-- **Manual Trigger**: Add bulletins via web interface
-- **Scheduled**: Weekly content regeneration  
-- **Automated**: Content generation → Hugo build → GitHub Pages deploy
+### GitHub Actions Workflows
 
-### Content Generation Flow
-1. **Database Update** - Add bulletin to JSON database
-2. **Hugo Content** - Generate markdown files for bulletins/products
-3. **RSS Generation** - Create RSS feed from database
-4. **Homepage Data** - Generate statistics and recent bulletins
-5. **Site Build** - Hugo builds static site with all content
+**🤖 Automated Scraping** (`scraper.yml`):
+- Runs every 6 hours automatically
+- Uses multi-strategy scraper to find new bulletins
+- Commits and pushes changes when new bulletins are found
+- Triggers deployment automatically
 
-## 📈 Current Status
+**🚀 Site Deployment** (`deploy.yml`):
+- Triggered by content changes or manual dispatch
+- Builds Hugo site with latest content and RSS feeds
+- Deploys to GitHub Pages at [adobedigest.com](https://adobedigest.com)
 
-- **Total Bulletins**: 5 (Adobe Commerce focused)
-- **Products Tracked**: Adobe Commerce, Magento Open Source
-- **Content Types**: Individual bulletins, product summaries, RSS feeds
-- **Last Updated**: Automatically tracked in database
+### Content Pipeline
+```
+Scheduled Run → Scraper → New Bulletins → Content Generator → Site Build → Deploy
+     ↓              ↓           ↓              ↓               ↓         ↓
+Every 6hrs    Multi-strategy  Database    Hugo + RSS     Static Site  GitHub Pages
+```
 
-## 🔍 Bulletin Sources
+## � Current Coverage
 
-Monitor these sources for new Adobe security bulletins:
-- [Adobe Security Advisories](https://helpx.adobe.com/security.html)
-- [Adobe Commerce Security](https://helpx.adobe.com/security/products/magento.html)
-- [Adobe PSIRT Blog](https://blog.adobe.com/en/publish/2024/03/12/psirt-adobe-product-security-incident-response-team)
+- **📈 Total Bulletins**: 150+ security advisories
+- **🏢 Products Tracked**: 35+ Adobe products (Creative Cloud, Document Cloud, Experience Cloud)
+- **📡 RSS Feeds**: 39 feeds (1 global + 1 products + 37 product-specific)
+- **🔄 Update Frequency**: Every 6 hours via automated scraping
+- **⚡ Last Updated**: Tracked automatically in database
 
-## 🚢 Deployment
+## 🤝 Contributing
 
-The site auto-deploys to GitHub Pages at [adobedigest.com](https://adobedigest.com) when:
-- New bulletins are added via GitHub Actions
-- Content is manually regenerated  
-- Changes are pushed to main branch
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
-## 📝 Content Structure
+### Development Setup
+1. Fork the repository
+2. Clone your fork: `git clone https://github.com/your-username/adobe-digest.git`
+3. Install dependencies: `go mod download`
+4. Run tests: `go test ./...`
+5. Make your changes and submit a pull request
 
-Each bulletin generates:
-- **Detailed page** with full advisory information
-- **Structured frontmatter** for Hugo processing  
-- **External links** to official Adobe advisories
-- **Product categorization** for easy navigation
-- **RSS feed entries** with full descriptions
+## 📄 License
 
----
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**Note**: This is an **unofficial** security bulletin aggregation service. Always refer to [Adobe's official PSIRT advisories](https://helpx.adobe.com/security.html) for authoritative security information and remediation guidance.
+## 👨‍💻 Author & Sponsorship
+
+**Created by**: [Doug Hatcher](https://doughatcher.com)  
+**Sponsored by**: [Blue Acorn iCi](https://blueacornici.com)
+
+## ⚠️ Disclaimer
+
+This is an **unofficial** security bulletin aggregation service. Always refer to [Adobe's official PSIRT advisories](https://helpx.adobe.com/security.html) for authoritative security information and remediation guidance.
+
+Adobe and all Adobe product names are trademarks of Adobe Inc. This project is not affiliated with or endorsed by Adobe Inc.
