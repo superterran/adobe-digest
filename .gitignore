@@ -31,3 +31,13 @@ node_modules/
 
 # Hugo module cache (this is handled by go mod)
 # The theme files are downloaded to ~/.cache/hugo_cache/modules/
+
+# Adobe Security Bulletins Scraper
+.scraper-cache.json
+scraper-test
+public-test/
+
+# Go build outputs
+/cmd/scraper/scraper
+/cmd/test/test
+/cmd/test-mock/test-mock

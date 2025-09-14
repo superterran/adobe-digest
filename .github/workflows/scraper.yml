@@ -1,0 +1,124 @@
+name: Scrape Adobe Security Bulletins
+
+on:
+  schedule:
+    # Run every 6 hours (at 00:00, 06:00, 12:00, and 18:00 UTC)
+    - cron: '0 */6 * * *'
+  workflow_dispatch:  # Allow manual trigger
+  push:
+    branches: ["main"]
+    paths: 
+      - "configs/scraper.yaml"
+      - "cmd/scraper/**"
+      - "internal/**"
+      - ".github/workflows/scraper.yml"
+  
+permissions:
+  contents: write  # Allow commits back to main
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21'
+          
+      - name: Cache Go modules
+        uses: actions/cache@v4
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+            
+      - name: Install dependencies
+        run: go mod download
+        
+      - name: Create required directories
+        run: |
+          mkdir -p content/bulletins
+          mkdir -p static/feeds
+          
+      - name: Run scraper
+        run: |
+          echo "Starting Adobe Security Bulletins scraper..."
+          go run cmd/scraper/main.go
+        env:
+          TZ: UTC
+          
+      - name: Check for changes
+        id: changes
+        run: |
+          git add .
+          if git diff --staged --quiet; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected:"
+            git diff --staged --name-only
+          fi
+          
+      - name: Commit and push changes
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Count new/modified files
+          NEW_FILES=$(git diff --staged --name-only | grep "\.md$" | wc -l)
+          RSS_FILES=$(git diff --staged --name-only | grep "\.xml$" | wc -l)
+          
+          # Create commit message
+          COMMIT_MSG="Update security bulletins - $(date -u +"%Y-%m-%d %H:%M UTC")"
+          if [ "$NEW_FILES" -gt 0 ]; then
+            COMMIT_MSG="$COMMIT_MSG
+
+📄 Content files: $NEW_FILES"
+          fi
+          if [ "$RSS_FILES" -gt 0 ]; then
+            COMMIT_MSG="$COMMIT_MSG
+🗞️  RSS feeds: $RSS_FILES"
+          fi
+          
+          git commit -m "$COMMIT_MSG"
+          git push
+          
+      - name: Report results
+        if: always()
+        run: |
+          if [ "${{ steps.changes.outputs.changes }}" = "true" ]; then
+            echo "✅ Scraper completed successfully with updates"
+            echo "Changes have been committed and pushed to main branch"
+            echo "The Hugo deployment workflow will be triggered automatically"
+          else
+            echo "ℹ️  Scraper completed successfully with no updates"
+            echo "No new or modified security bulletins found"
+          fi
+          
+      - name: Upload cache as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraper-cache
+          path: .scraper-cache.json
+          retention-days: 30
+          
+      - name: Upload logs as artifact on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraper-logs-${{ github.run_id }}
+          path: |
+            *.log
+            .scraper-cache.json
+          retention-days: 7
