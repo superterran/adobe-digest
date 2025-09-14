@@ -1,12 +1,6 @@
 ---
-title: "Adobe Digest"
-description: "Your source for Adobe news and insights"
+title: "Adobe Security Intelligence Hub"
+description: "Real-time Adobe security bulletins and expert analysis"
 ---
 
-# Welcome to Adobe Digest
-
-This is your home for Adobe-related content, news, and insights.
-
-## Getting Started
-
-Explore our content through the navigation menu above.
+The homepage content is rendered by the custom layout at `/layouts/index.html`.

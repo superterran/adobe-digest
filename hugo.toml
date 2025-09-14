@@ -38,9 +38,19 @@ title = "Adobe Digest"
     weight = 1
   
   [[menu.main]]
+    name = "Security Bulletins"
+    url = "/bulletins/"
+    weight = 2
+  
+  [[menu.main]]
+    name = "RSS Feeds"
+    url = "/feeds/"
+    weight = 3
+  
+  [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 2
+    weight = 4
 
 # Markup configuration for code highlighting
 [markup]
