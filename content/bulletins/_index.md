@@ -1,8 +1,10 @@
 ---
-title: "All Adobe Security Bulletins"
+title: "Security Bulletins"
 description: "Adobe Security Bulletins and Advisories"
 weight: 1
 ---
+
+# Adobe Security Bulletins
 
 This section contains all tracked Adobe security bulletins, organized by product and severity.
 

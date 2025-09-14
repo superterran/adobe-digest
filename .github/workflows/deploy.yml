@@ -61,6 +61,14 @@ jobs:
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Get Hugo modules
         run: hugo mod get
+      - name: Generate RSS feeds and content
+        run: |
+          echo "📡 Generating RSS feeds and Hugo content..."
+          go run cmd/content-generator/main.go generate
+          echo "✅ RSS feeds and content generated successfully!"
+          echo "📊 Feed statistics:"
+          find static -name "*.xml" | wc -l | xargs echo "  RSS feeds generated:"
+          ls -la static/feeds/ | head -5
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules

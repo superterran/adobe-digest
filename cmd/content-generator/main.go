@@ -132,8 +132,10 @@ func cleanGeneratedContent() {
 
 	// Remove generated feeds
 	feedFiles := []string{
-		"public/adobe-security.xml",
+		"static/adobe-security.xml",
 		"static/feeds",
+		"public/adobe-security.xml", // Legacy cleanup
+		"public/feeds", // Legacy cleanup
 	}
 
 	for _, file := range feedFiles {
@@ -441,7 +443,7 @@ func generateRSSFeed(db *BulletinDatabase) error {
 	}
 
 	// Save RSS file
-	rssFile := "public/adobe-security.xml"
+	rssFile := "static/adobe-security.xml"
 	if err := os.MkdirAll(filepath.Dir(rssFile), 0755); err != nil {
 		return fmt.Errorf("creating RSS directory: %w", err)
 	}
@@ -458,7 +460,7 @@ func generateProductRSSFeeds(db *BulletinDatabase) error {
 	fmt.Println("📡 Generating product-specific RSS feeds...")
 
 	// Create feeds directory
-	feedsDir := "public/feeds"
+	feedsDir := "static/feeds"
 	if err := os.MkdirAll(feedsDir, 0755); err != nil {
 		return fmt.Errorf("creating feeds directory: %w", err)
 	}
