@@ -1,0 +1,1100 @@
+{
+  "last_updated": "2025-09-14T18:58:48.328270862Z",
+  "bulletins": [
+    {
+      "apsb": "APSB25-85",
+      "title": "APSB25-85: Security update available for Adobe Acrobat Reader",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/acrobat/apsb25-85.html",
+      "date": "2025-09-09T00:00:00Z",
+      "products": [
+        "Adobe Acrobat",
+        "Adobe Acrobat Reader"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-86",
+      "title": "APSB25-86: Security update available for Adobe After Effects",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/after-effects/apsb25-86.html",
+      "date": "2025-09-09T00:00:00Z",
+      "products": [
+        "Adobe After Effects"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-87",
+      "title": "APSB25-87: Security update available for Adobe Premiere Pro",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/premiere/apsb25-87.html",
+      "date": "2025-09-09T00:00:00Z",
+      "products": [
+        "Adobe Premiere Pro"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-88",
+      "title": "APSB25-88: Security update available for Adobe Commerce",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/commerce/apsb25-88.html",
+      "date": "2025-09-09T00:00:00Z",
+      "products": [
+        "Adobe Commerce"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-89",
+      "title": "APSB25-89: Security update available for Adobe Substance 3D Viewer",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-89.html",
+      "date": "2025-09-09T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-90",
+      "title": "APSB25-90: Security update available for Adobe Experience Manager",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/experience-manager/apsb25-90.html",
+      "date": "2025-09-09T00:00:00Z",
+      "products": [
+        "Adobe Experience Manager"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-91",
+      "title": "APSB25-91: Security update available for Adobe Dreamweaver",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/dreamweaver/apsb25-91.html",
+      "date": "2025-09-09T00:00:00Z",
+      "products": [
+        "Adobe Dreamweaver"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-92",
+      "title": "APSB25-92: Security update available for Adobe 3D Substance Modeler",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-92.html",
+      "date": "2025-09-09T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-93",
+      "title": "APSB25-93: Security update available for Adobe ColdFusion",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/coldfusion/apsb25-93.html",
+      "date": "2025-09-09T00:00:00Z",
+      "products": [
+        "Adobe ColdFusion"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-57",
+      "title": "APSB25-57: Security update available for Adobe Acrobat Reader",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/acrobat/apsb25-57.html",
+      "date": "2025-06-10T00:00:00Z",
+      "products": [
+        "Adobe Acrobat",
+        "Adobe Acrobat Reader"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-14",
+      "title": "APSB25-14: Security update available for Adobe Acrobat Reader",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/acrobat/apsb25-14.html",
+      "date": "2025-03-11T00:00:00Z",
+      "products": [
+        "Adobe Acrobat",
+        "Adobe Acrobat Reader"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-49",
+      "title": "APSB25-49: Security update available for Adobe After Effects",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/after-effects/apsb25-49.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe After Effects"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-23",
+      "title": "APSB25-23: Security update available for Adobe After Effects",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/after-effects/apsb25-23.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe After Effects"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-73",
+      "title": "APSB25-73: Security update available for Adobe Animate",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/animate/apsb25-73.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe Animate"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-42",
+      "title": "APSB25-42: Security update available for Adobe Animate",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/animate/apsb25-42.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe Animate"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-31",
+      "title": "APSB25-31: Security update available for Adobe Animate",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/animate/apsb25-31.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe Animate"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-05",
+      "title": "APSB25-05: Security update available for Adobe Animate",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/animate/apsb25-05.html",
+      "date": "2025-01-14T00:00:00Z",
+      "products": [
+        "Adobe Animate"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-56",
+      "title": "APSB25-56: Security update available for Adobe Audition",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/audition/apsb25-56.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe Audition"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-44",
+      "title": "APSB25-44: Security update available for Adobe Bridge",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/bridge/apsb25-44.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe Bridge"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-25",
+      "title": "APSB25-25: Security update available for Adobe Bridge",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/bridge/apsb25-25.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe Bridge"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-69",
+      "title": "APSB25-69: Security update available for Adobe ColdFusion",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/coldfusion/apsb25-69.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe ColdFusion"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-52",
+      "title": "APSB25-52: Security update available for Adobe ColdFusion",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/coldfusion/apsb25-52.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe ColdFusion"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-15",
+      "title": "APSB25-15: Security update available for Adobe ColdFusion",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/coldfusion/apsb25-15.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe ColdFusion"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-61",
+      "title": "APSB25-61: Security update available for Adobe Connect",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/connect/apsb25-61.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe Connect"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-36",
+      "title": "APSB25-36: Security update available for Adobe Connect",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/connect/apsb25-36.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe Connect"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-35",
+      "title": "APSB25-35: Security update available for Adobe Dreamweaver",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/dreamweaver/apsb25-35.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe Dreamweaver"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-48",
+      "title": "APSB25-48: Security update available for Adobe Experience Manager",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/experience-manager/apsb25-48.html",
+      "date": "2025-06-10T00:00:00Z",
+      "products": [
+        "Adobe Experience Manager"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-82",
+      "title": "APSB25-82: Security update available for Adobe AEM Forms",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/experience-manager/apsb25-82.html",
+      "date": "2025-08-05T00:00:00Z",
+      "products": [
+        "Adobe Experience Manager"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-67",
+      "title": "APSB25-67: Security update available for Adobe AEM Forms",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/experience-manager/apsb25-67.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe Experience Manager"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-27",
+      "title": "APSB25-27: Security update available for Adobe AEM Forms",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/experience-manager/apsb25-27.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe Experience Manager"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-68",
+      "title": "APSB25-68: Security update available for Adobe AEM Screens",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/experience-manager/apsb25-68.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe Experience Manager"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-32",
+      "title": "APSB25-32: Security update available for Adobe AEM Screens",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/experience-manager/apsb25-32.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe Experience Manager"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-83",
+      "title": "APSB25-83: Security update available for Adobe FrameMaker",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/framemaker/apsb25-83.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe FrameMaker"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-66",
+      "title": "APSB25-66: Security update available for Adobe FrameMaker",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/framemaker/apsb25-66.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe FrameMaker"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-33",
+      "title": "APSB25-33: Security update available for Adobe FrameMaker",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/framemaker/apsb25-33.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe FrameMaker"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-74",
+      "title": "APSB25-74: Security update available for Adobe Illustrator",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/illustrator/apsb25-74.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe Illustrator"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-65",
+      "title": "APSB25-65: Security update available for Adobe Illustrator",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/illustrator/apsb25-65.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe Illustrator"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-43",
+      "title": "APSB25-43: Security update available for Adobe Illustrator",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/illustrator/apsb25-43.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe Illustrator"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-17",
+      "title": "APSB25-17: Security update available for Adobe Illustrator",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/illustrator/apsb25-17.html",
+      "date": "2025-03-11T00:00:00Z",
+      "products": [
+        "Adobe Illustrator"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-11",
+      "title": "APSB25-11: Security update available for Adobe Illustrator",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/illustrator/apsb25-11.html",
+      "date": "2025-02-11T00:00:00Z",
+      "products": [
+        "Adobe Illustrator"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-04",
+      "title": "APSB25-04: Security update available for Adobe Illustrator for iPad",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/illustrator/apsb25-04.html",
+      "date": "2025-01-14T00:00:00Z",
+      "products": [
+        "Adobe Illustrator"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-80",
+      "title": "APSB25-80: Security update available for Adobe InCopy",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb25-80.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-59",
+      "title": "APSB25-59: Security update available for Adobe InCopy",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb25-59.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-41",
+      "title": "APSB25-41: Security update available for Adobe InCopy",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb25-41.html",
+      "date": "2025-06-10T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-10",
+      "title": "APSB25-10: Security update available for Adobe InCopy",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb25-10.html",
+      "date": "2025-02-11T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-79",
+      "title": "APSB25-79: Security update available for Adobe InDesign",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/indesign/apsb25-79.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe InDesign"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-60",
+      "title": "APSB25-60: Security update available for Adobe InDesign",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/indesign/apsb25-60.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe InDesign"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-53",
+      "title": "APSB25-53: Security update available for Adobe InDesign",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/indesign/apsb25-53.html",
+      "date": "2025-06-10T00:00:00Z",
+      "products": [
+        "Adobe InDesign"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-37",
+      "title": "APSB25-37: Security update available for Adobe InDesign",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/indesign/apsb25-37.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe InDesign"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-19",
+      "title": "APSB25-19: Security update available for Adobe InDesign",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/indesign/apsb25-19.html",
+      "date": "2025-03-11T00:00:00Z",
+      "products": [
+        "Adobe InDesign"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-01",
+      "title": "APSB25-01: Security update available for Adobe InDesign",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/indesign/apsb25-01.html",
+      "date": "2025-02-11T00:00:00Z",
+      "products": [
+        "Adobe InDesign"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-29",
+      "title": "APSB25-29: Security update available for Adobe Lightroom",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/lightroom/apsb25-29.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe Lightroom"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-71",
+      "title": "APSB25-71: Security update available for Adobe Commerce",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/commerce/apsb25-71.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe Commerce"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-50",
+      "title": "APSB25-50: Security update available for Adobe Commerce",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/commerce/apsb25-50.html",
+      "date": "2025-06-10T00:00:00Z",
+      "products": [
+        "Adobe Commerce"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-26",
+      "title": "APSB25-26: Security update available for Adobe Commerce",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/commerce/apsb25-26.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe Commerce"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-08",
+      "title": "APSB25-08: Security update available for Adobe Commerce",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/commerce/apsb25-08.html",
+      "date": "2025-02-11T00:00:00Z",
+      "products": [
+        "Adobe Commerce"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-24",
+      "title": "APSB25-24: Security update available for Adobe Media Encoder",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb25-24.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe Media Encoder"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-28",
+      "title": "APSB25-28: Security update available for Adobe Premiere Pro",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/premiere/apsb25-28.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe Premiere Pro"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-75",
+      "title": "APSB25-75: Security update available for Adobe Photoshop",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/photoshop/apsb25-75.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe Photoshop"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-40",
+      "title": "APSB25-40: Security update available for Adobe Photoshop",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/photoshop/apsb25-40.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe Photoshop"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-30",
+      "title": "APSB25-30: Security update available for Adobe Photoshop",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/photoshop/apsb25-30.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe Photoshop"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-02",
+      "title": "APSB25-02: Security update available for Adobe Photoshop",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/photoshop/apsb25-02.html",
+      "date": "2025-01-14T00:00:00Z",
+      "products": [
+        "Adobe Photoshop"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-13",
+      "title": "APSB25-13: Security update available for Adobe Photoshop Elements",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/photoshop/apsb25-13.html",
+      "date": "2025-02-11T00:00:00Z",
+      "products": [
+        "Adobe Photoshop"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-22",
+      "title": "APSB25-22: Security update available for Adobe Substance 3D Designer",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-22.html",
+      "date": "2025-03-11T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-12",
+      "title": "APSB25-12: Security update available for Adobe Substance 3D Designer",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-12.html",
+      "date": "2025-02-11T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-06",
+      "title": "APSB25-06: Security update available for Adobe Substance3D Designer",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-06.html",
+      "date": "2025-01-14T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-81",
+      "title": "APSB25-81: Security update available for Adobe Substance 3D Stager",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-81.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-64",
+      "title": "APSB25-64: Security update available for Adobe Substance 3D Stager",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-64.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-46",
+      "title": "APSB25-46: Security update available for Adobe Substance 3D Stager",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-46.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-09",
+      "title": "APSB25-09: Security update available for Adobe Substance 3D Stager",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-09.html",
+      "date": "2025-02-11T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-03",
+      "title": "APSB25-03: Security update available for Adobe Substance3D Stager",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-03.html",
+      "date": "2025-01-14T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-77",
+      "title": "APSB25-77: Security update available for Adobe Substance 3D Painter",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-77.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-58",
+      "title": "APSB25-58: Security update available for Adobe Substance 3D Painter",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-58.html",
+      "date": "2025-06-10T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-38",
+      "title": "APSB25-38: Security update available for Adobe Substance 3D Painter",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-38.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-18",
+      "title": "APSB25-18: Security update available for Adobe Substance 3D Painter",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-18.html",
+      "date": "2025-03-11T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-78",
+      "title": "APSB25-78: Security update available for Adobe Substance 3D Sampler",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-78.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-55",
+      "title": "APSB25-55: Security update available for Adobe Substance 3D Sampler",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-55.html",
+      "date": "2025-06-10T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-16",
+      "title": "APSB25-16: Security update available for Adobe Substance 3D Sampler",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-16.html",
+      "date": "2025-03-11T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-76",
+      "title": "APSB25-76: Security update available for Adobe Substance 3D Modeler",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-76.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-51",
+      "title": "APSB25-51: Security update available for Adobe Substance 3D Modeler",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-51.html",
+      "date": "2025-05-13T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-21",
+      "title": "APSB25-21: Security update available for Adobe Substance 3D Modeler",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-21.html",
+      "date": "2025-03-11T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-72",
+      "title": "APSB25-72: Security update available for Adobe Substance 3D Viewer",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-72.html",
+      "date": "2025-08-12T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-54",
+      "title": "APSB25-54: Security update available for Adobe Substance 3D Viewer",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/substance/apsb25-54.html",
+      "date": "2025-07-08T00:00:00Z",
+      "products": [
+        "Adobe Substance 3D"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-34",
+      "title": "APSB25-34: Security update available for Adobe XMP Toolkit SDK",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb25-34.html",
+      "date": "2025-04-08T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB24-74",
+      "title": "Security update available for Adobe Acrobat and Reader",
+      "description": "Adobe has released security updates for Adobe Acrobat and Reader. These updates resolve critical and important vulnerabilities that could lead to arbitrary code execution.",
+      "url": "https://helpx.adobe.com/security/products/acrobat/apsb24-74.html",
+      "date": "2024-11-12T00:00:00Z",
+      "products": [
+        "Adobe Acrobat DC",
+        "Adobe Acrobat Reader DC"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "apsb": "APSB24-73",
+      "title": "Security update available for Adobe Commerce",
+      "description": "Adobe has released security updates for Adobe Commerce and Magento Open Source. These updates resolve critical and important vulnerabilities.",
+      "url": "https://helpx.adobe.com/security/products/magento/apsb24-73.html",
+      "date": "2024-11-12T00:00:00Z",
+      "products": [
+        "Adobe Commerce",
+        "Magento Open Source"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "apsb": "APSB24-70",
+      "title": "Security update available for Adobe Experience Manager",
+      "description": "Adobe has released security updates for Adobe Experience Manager. These updates resolve critical and important vulnerabilities including remote code execution.",
+      "url": "https://helpx.adobe.com/security/products/experience-manager/apsb24-70.html",
+      "date": "2024-10-08T00:00:00Z",
+      "products": [
+        "Adobe Experience Manager",
+        "Adobe Experience Manager as a Cloud Service"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "apsb": "APSB24-66",
+      "title": "Security update available for Adobe Photoshop",
+      "description": "Adobe has released security updates for Adobe Photoshop. These updates resolve critical vulnerabilities that could lead to arbitrary code execution.",
+      "url": "https://helpx.adobe.com/security/products/photoshop/apsb24-66.html",
+      "date": "2024-09-10T00:00:00Z",
+      "products": [
+        "Adobe Photoshop 2024",
+        "Adobe Photoshop 2023"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "apsb": "APSB24-63",
+      "title": "Security update available for Adobe Illustrator",
+      "description": "Adobe has released security updates for Adobe Illustrator. These updates resolve important vulnerabilities that could lead to memory corruption.",
+      "url": "https://helpx.adobe.com/security/products/illustrator/apsb24-63.html",
+      "date": "2024-09-10T00:00:00Z",
+      "products": [
+        "Adobe Illustrator 2024",
+        "Adobe Illustrator 2023"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB24-62",
+      "title": "Security update available for Adobe InDesign",
+      "description": "Adobe has released security updates for Adobe InDesign. These updates resolve important vulnerabilities that could lead to arbitrary code execution.",
+      "url": "https://helpx.adobe.com/security/products/indesign/apsb24-62.html",
+      "date": "2024-09-10T00:00:00Z",
+      "products": [
+        "Adobe InDesign 2024",
+        "Adobe InDesign 2023"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB24-61",
+      "title": "Security update available for Adobe Commerce",
+      "description": "Adobe has released security updates for Adobe Commerce and Magento Open Source. These updates resolve critical and important vulnerabilities.",
+      "url": "https://helpx.adobe.com/security/products/magento/apsb24-61.html",
+      "date": "2024-08-13T00:00:00Z",
+      "products": [
+        "Adobe Commerce",
+        "Magento Open Source"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "apsb": "APSB24-40",
+      "title": "Security update available for Adobe Commerce",
+      "description": "Adobe has released security updates for Adobe Commerce and Magento Open Source. These updates resolve critical and important vulnerabilities.",
+      "url": "https://helpx.adobe.com/security/products/magento/apsb24-40.html",
+      "date": "2024-06-11T00:00:00Z",
+      "products": [
+        "Adobe Commerce",
+        "Magento Open Source"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "apsb": "APSB24-18",
+      "title": "Security update available for Adobe Commerce",
+      "description": "Adobe has released security updates for Adobe Commerce and Magento Open Source. These updates resolve critical and important vulnerabilities.",
+      "url": "https://helpx.adobe.com/security/products/magento/apsb24-18.html",
+      "date": "2024-02-13T00:00:00Z",
+      "products": [
+        "Adobe Commerce",
+        "Magento Open Source"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "apsb": "APSB24-45",
+      "title": "Security update available for Adobe After Effects",
+      "description": "Adobe has released security updates for Adobe After Effects. These updates resolve important vulnerabilities that could lead to arbitrary code execution.",
+      "url": "https://helpx.adobe.com/security/products/after_effects/apsb24-45.html",
+      "date": "2024-07-09T00:00:00Z",
+      "products": [
+        "Adobe After Effects 2024",
+        "Adobe After Effects 2023"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB24-35",
+      "title": "Security update available for Adobe Premiere Pro",
+      "description": "Adobe has released security updates for Adobe Premiere Pro. These updates resolve critical vulnerabilities that could lead to arbitrary code execution.",
+      "url": "https://helpx.adobe.com/security/products/premiere_pro/apsb24-35.html",
+      "date": "2024-06-11T00:00:00Z",
+      "products": [
+        "Adobe Premiere Pro 2024",
+        "Adobe Premiere Pro 2023"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "apsb": "APSB24-28",
+      "title": "Security update available for Adobe Bridge",
+      "description": "Adobe has released security updates for Adobe Bridge. These updates resolve important vulnerabilities that could lead to arbitrary code execution.",
+      "url": "https://helpx.adobe.com/security/products/bridge/apsb24-28.html",
+      "date": "2024-05-14T00:00:00Z",
+      "products": [
+        "Adobe Bridge 2024",
+        "Adobe Bridge 2023"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB24-20",
+      "title": "Security update available for Adobe ColdFusion",
+      "description": "Adobe has released security updates for Adobe ColdFusion. These updates resolve critical vulnerabilities including remote code execution and information disclosure.",
+      "url": "https://helpx.adobe.com/security/products/coldfusion/apsb24-20.html",
+      "date": "2024-03-12T00:00:00Z",
+      "products": [
+        "Adobe ColdFusion 2023",
+        "Adobe ColdFusion 2021"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "apsb": "APSB23-50",
+      "title": "Security update available for Adobe Commerce",
+      "description": "Adobe has released security updates for Adobe Commerce and Magento Open Source. These updates resolve critical and important vulnerabilities.",
+      "url": "https://helpx.adobe.com/security/products/magento/apsb23-50.html",
+      "date": "2023-10-10T00:00:00Z",
+      "products": [
+        "Adobe Commerce",
+        "Magento Open Source"
+      ],
+      "severity": "Critical"
+    }
+  ]
+}

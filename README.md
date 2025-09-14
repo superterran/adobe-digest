@@ -1,96 +1,148 @@
-# Adobe Digest
+# Adobe Security Digest
 
-A Hugo site using the [Hextra](https://github.com/imfing/hextra) theme, built with minimal footprint using Hugo modules.
+A **clean, reliable approach** to Adobe Security Bulletins - manually curated database that generates Hugo content, RSS feeds, and a comprehensive security tracking website.
 
-## 🚀 Live Site
+## 🎯 Why This Approach?
 
-The site is automatically deployed to GitHub Pages with custom domain: https://adobedigest.com
+Adobe's Akamai CDN aggressively blocks automated scrapers, making traditional scraping unreliable. Our manual curation approach provides:
 
-## 🏗️ Development
+- ✅ **100% Reliable** - No CDN blocking or timeout issues
+- ✅ **Rich Content** - Full Hugo pages for each bulletin  
+- ✅ **Multiple Formats** - Website, RSS feeds, JSON data
+- ✅ **Easy Updates** - Simple JSON input, automated generation
+- ✅ **GitHub Actions** - Automated workflows for content management
 
-### Prerequisites
-
-- Hugo (extended version)
-- Go (for module management)
+## 🚀 Quick Start
 
 ### Local Development
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/superterran/adobe-digest.git
-   cd adobe-digest
-   ```
+```bash
+# Clone and setup
+git clone https://github.com/superterran/adobe-digest.git
+cd adobe-digest
+go mod download
 
-2. Get Hugo modules:
-   ```bash
-   hugo mod get
-   ```
+# Generate all content from database
+go run cmd/content-generator/main.go generate
 
-3. Start the development server:
-   ```bash
-   hugo server --buildDrafts
-   ```
+# Build and serve Hugo site  
+hugo server --port 1314
+```
 
-4. Open your browser to `http://localhost:1313/`
+### Adding New Bulletins
 
-### Building
+Via GitHub Actions (Recommended):
+1. Go to **Actions** → **Update Adobe Security Content**
+2. Click **Run workflow**
+3. Paste bulletin JSON:
 
-To build the site for production:
+```json
+{
+  "apsb": "APSB24-XX",
+  "title": "Security update available for Adobe Commerce",
+  "description": "Adobe has released security updates resolving vulnerabilities.",
+  "url": "https://helpx.adobe.com/security/products/magento/apsb24-xx.html", 
+  "date": "2024-12-01T00:00:00Z",
+  "products": ["Adobe Commerce", "Magento Open Source"],
+  "severity": "Critical"
+}
+```
+
+## 📊 Generated Content
+
+The content generator creates:
+
+### Hugo Pages
+- **Individual Bulletins** (`/bulletins/apsb24-xx/`) - Detailed pages for each bulletin
+- **Product Pages** (`/products/adobe-commerce/`) - Bulletins grouped by product  
+- **Index Pages** (`/bulletins/`) - Overview and navigation
+- **Homepage Data** - Dynamic statistics and recent bulletins
+
+### RSS Feeds  
+- **Main Feed** (`/adobe-security.xml`) - All bulletins in RSS 2.0 format
+
+### Data Files
+- **Homepage JSON** (`data/homepage.json`) - Statistics for Hugo templates
+- **Database** (`data/security-bulletins.json`) - Master bulletin database
+
+## 🏗️ Architecture
+
+```
+├── cmd/content-generator/     # Main content generation tool
+├── data/
+│   ├── security-bulletins.json   # Master database (manual)  
+│   └── homepage.json             # Generated homepage data
+├── content/
+│   ├── bulletins/                # Generated bulletin pages
+│   └── products/                 # Generated product pages  
+├── layouts/                      # Hugo templates
+└── public/
+    └── adobe-security.xml        # Generated RSS feed
+```
+
+## 🛠️ Commands
 
 ```bash
-hugo --gc --minify
+# Generate all content from database
+go run cmd/content-generator/main.go generate
+
+# Add new bulletin and regenerate 
+go run cmd/content-generator/main.go add '{"apsb":"APSB24-XX",...}'
+
+# Clean all generated content
+go run cmd/content-generator/main.go clean
+
+# Build Hugo site
+hugo --minify
+
+# Serve locally
+hugo server --port 1314
 ```
 
-## 🎨 Theme Customization
+## 🔄 Automation
 
-This project uses the Hextra theme as a Hugo module, keeping the repository lightweight.
+### GitHub Actions Workflow
+- **Manual Trigger**: Add bulletins via web interface
+- **Scheduled**: Weekly content regeneration  
+- **Automated**: Content generation → Hugo build → GitHub Pages deploy
 
-### Making Theme Overrides
+### Content Generation Flow
+1. **Database Update** - Add bulletin to JSON database
+2. **Hugo Content** - Generate markdown files for bulletins/products
+3. **RSS Generation** - Create RSS feed from database
+4. **Homepage Data** - Generate statistics and recent bulletins
+5. **Site Build** - Hugo builds static site with all content
 
-To customize the theme:
+## 📈 Current Status
 
-1. Create files in the `layouts/` directory matching the theme's structure
-2. Hugo will automatically use your local files instead of the theme files
-3. Your overrides will be tracked in git while the base theme remains external
+- **Total Bulletins**: 5 (Adobe Commerce focused)
+- **Products Tracked**: Adobe Commerce, Magento Open Source
+- **Content Types**: Individual bulletins, product summaries, RSS feeds
+- **Last Updated**: Automatically tracked in database
 
-See `layouts/README.md` for detailed instructions.
+## 🔍 Bulletin Sources
 
-### Updating the Theme
-
-To update to the latest version of Hextra:
-
-```bash
-hugo mod get -u
-```
-
-## 📁 Project Structure
-
-```
-├── content/           # Site content (Markdown files)
-├── layouts/           # Theme overrides and custom layouts
-├── static/            # Static assets
-├── .github/workflows/ # GitHub Actions for deployment
-├── hugo.toml         # Hugo configuration
-├── go.mod            # Go module dependencies (theme management)
-└── go.sum            # Go module checksums
-```
+Monitor these sources for new Adobe security bulletins:
+- [Adobe Security Advisories](https://helpx.adobe.com/security.html)
+- [Adobe Commerce Security](https://helpx.adobe.com/security/products/magento.html)
+- [Adobe PSIRT Blog](https://blog.adobe.com/en/publish/2024/03/12/psirt-adobe-product-security-incident-response-team)
 
 ## 🚢 Deployment
 
-The site is automatically deployed to GitHub Pages using GitHub Actions whenever changes are pushed to the `main` branch.
+The site auto-deploys to GitHub Pages at [adobedigest.com](https://adobedigest.com) when:
+- New bulletins are added via GitHub Actions
+- Content is manually regenerated  
+- Changes are pushed to main branch
 
-The deployment workflow:
-1. Sets up Hugo and Go
-2. Downloads theme dependencies via Hugo modules
-3. Builds the site
-4. Deploys to GitHub Pages
+## 📝 Content Structure
 
-## 📝 Adding Content
+Each bulletin generates:
+- **Detailed page** with full advisory information
+- **Structured frontmatter** for Hugo processing  
+- **External links** to official Adobe advisories
+- **Product categorization** for easy navigation
+- **RSS feed entries** with full descriptions
 
-Create new content files in the `content/` directory:
+---
 
-```bash
-hugo new posts/my-new-post.md
-```
-
-Edit the generated file and start writing in Markdown!
+**Note**: This is an **unofficial** security bulletin aggregation service. Always refer to [Adobe's official PSIRT advisories](https://helpx.adobe.com/security.html) for authoritative security information and remediation guidance.

@@ -38,19 +38,54 @@ title = "Adobe Digest"
     weight = 1
   
   [[menu.main]]
-    name = "Security Bulletins"
+    name = "All Bulletins"
     url = "/bulletins/"
     weight = 2
   
   [[menu.main]]
+    name = "Products"
+    weight = 3
+    hasChildren = true
+  
+  [[menu.main]]
+    name = "Creative Cloud"
+    parent = "Products"
+    url = "/products/?filter=creative"
+    weight = 31
+  
+  [[menu.main]]
+    name = "Document Cloud"
+    parent = "Products"
+    url = "/products/?filter=document"
+    weight = 32
+  
+  [[menu.main]]
+    name = "Commerce"
+    parent = "Products"
+    url = "/products/?filter=commerce"
+    weight = 33
+  
+  [[menu.main]]
+    name = "Experience Manager"
+    parent = "Products"
+    url = "/products/?filter=experience"
+    weight = 34
+  
+  [[menu.main]]
+    name = "ColdFusion"
+    parent = "Products"
+    url = "/products/?filter=coldfusion"
+    weight = 35
+  
+  [[menu.main]]
     name = "RSS Feeds"
     url = "/feeds/"
-    weight = 3
+    weight = 4
   
   [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 4
+    weight = 5
 
 # Markup configuration for code highlighting
 [markup]

@@ -1,0 +1,87 @@
+name: Bulk Import Adobe Security Bulletins
+
+on:
+  workflow_dispatch:
+    inputs:
+      import_data:
+        description: 'JSON data to import (paste the content of your import file)'
+        required: true
+        type: string
+      commit_message:
+        description: 'Commit message for the update'
+        required: false
+        default: 'Bulk import Adobe security bulletins'
+        type: string
+
+jobs:
+  bulk-import:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.21'
+        
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+        extended: true
+        
+    - name: Create import file
+      run: |
+        echo '${{ github.event.inputs.import_data }}' > import-temp.json
+        
+    - name: Validate import data
+      run: |
+        # Check if the JSON is valid
+        if ! jq empty import-temp.json 2>/dev/null; then
+          echo "❌ Invalid JSON data provided"
+          exit 1
+        fi
+        
+        # Check if it has the expected structure
+        if ! jq -e '.bulletins | type == "array"' import-temp.json >/dev/null; then
+          echo "❌ Import data must have 'bulletins' array"
+          exit 1
+        fi
+        
+        bulletin_count=$(jq '.bulletins | length' import-temp.json)
+        echo "📥 Found $bulletin_count bulletins to import"
+        
+    - name: Import bulletins
+      run: |
+        echo "🔄 Importing bulletins into database..."
+        go run cmd/bulk-importer/main.go data/security-bulletins.json import-temp.json
+        
+    - name: Generate content
+      run: |
+        echo "🔄 Generating Hugo content..."
+        go run cmd/content-generator/main.go generate
+        
+    - name: Build site
+      run: |
+        echo "🔄 Building Hugo site..."
+        hugo --minify
+        
+    - name: Clean up temporary files
+      run: |
+        rm -f import-temp.json
+        
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        if [[ -n $(git status --porcelain) ]]; then
+          git add .
+          git commit -m "${{ github.event.inputs.commit_message }}"
+          git push
+          echo "✅ Changes committed and pushed"
+        else
+          echo "ℹ️ No changes to commit"
+        fi

@@ -4,6 +4,14 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
+    paths:
+      - "content/**"
+      - "data/**" 
+      - "layouts/**"
+      - "static/**"
+      - "hugo.toml"
+      - "go.mod"
+      - "go.sum"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -59,10 +67,19 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
+          echo "🏗️  Building Adobe Digest site for production..."
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"          
+            --buildFuture \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            
+          echo "✅ Build completed successfully!"
+          echo "📊 Build statistics:"
+          find public -type f -name "*.html" | wc -l | xargs echo "  HTML pages:"
+          find public -type f -name "*.xml" | wc -l | xargs echo "  RSS/XML feeds:"
+          find public -type f -name "*.json" | wc -l | xargs echo "  JSON files:"
+          du -sh public | cut -f1 | xargs echo "  Total site size:"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -79,3 +96,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
+      - name: Report successful deployment
+        run: |
+          echo "🚀 Adobe Digest site deployed successfully!"
+          echo "🌐 Live site: ${{ steps.deployment.outputs.page_url }}"
+          echo "⏰ Deployed at: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"

@@ -1,0 +1,10 @@
+APSB25-85 - Security update available for Adobe Acrobat Reader - September 9, 2025
+APSB25-84 - Security update available for Adobe Photoshop - September 2, 2025
+APSB25-83 - Security update available for Adobe After Effects - August 13, 2025
+APSB25-82 - Security update available for Adobe Illustrator - August 6, 2025
+APSB25-81 - Security update available for Adobe Premiere Pro - July 23, 2025
+APSB25-80 - Security update available for Adobe Lightroom - July 16, 2025
+APSB25-79 - Security update available for Adobe InDesign - July 9, 2025
+APSB25-78 - Security update available for Adobe Experience Manager - June 25, 2025
+APSB25-77 - Security update available for Adobe Commerce - June 18, 2025
+APSB25-76 - Security update available for Adobe ColdFusion - June 11, 2025

@@ -6,16 +6,24 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
     inputs:
+      scraper_method:
+        description: 'Scraping method to use'
+        required: true
+        default: 'auto'
+        type: choice
+        options:
+          - 'auto'
+          - 'manual'
+      bulletin_data:
+        description: 'Manual bulletin data (when method=manual, paste table format data)'
+        required: false
+        default: ''
+        type: string
       force_update:
         description: 'Force update all bulletins (ignore cache)'
         required: false
         default: false
         type: boolean
-      products:
-        description: 'Comma-separated list of products to scrape (empty = all)'
-        required: false
-        default: ''
-        type: string
   push:
     branches: ["main"]
     paths: 
@@ -59,25 +67,32 @@ jobs:
           mkdir -p content/bulletins
           mkdir -p static/feeds
           
-      - name: Run scraper
+      - name: Run automated scraper
+        if: ${{ github.event.inputs.scraper_method != 'manual' }}
         run: |
-          echo "Starting Adobe Security Bulletins scraper..."
-          SCRAPER_ARGS=""
-          
-          if [ "${{ github.event.inputs.force_update }}" = "true" ]; then
-            echo "🔄 Force update enabled - ignoring cache"
-            SCRAPER_ARGS="$SCRAPER_ARGS --force-update"
-          fi
-          
-          if [ -n "${{ github.event.inputs.products }}" ]; then
-            echo "🎯 Targeting specific products: ${{ github.event.inputs.products }}"
-            SCRAPER_ARGS="$SCRAPER_ARGS --products=${{ github.event.inputs.products }}"
-          fi
-          
-          echo "Running: go run cmd/scraper/main.go $SCRAPER_ARGS"
-          go run cmd/scraper/main.go $SCRAPER_ARGS
+          echo "🤖 Starting Adobe Security Bulletins automated scraper..."
+          go run cmd/auto-scraper/main.go
         env:
           TZ: UTC
+          
+      - name: Run manual parser
+        if: ${{ github.event.inputs.scraper_method == 'manual' && github.event.inputs.bulletin_data != '' }}
+        run: |
+          echo "📝 Processing manual bulletin data..."
+          echo "${{ github.event.inputs.bulletin_data }}" | go run cmd/manual-parser/main.go
+          
+      - name: Run fallback scraper (try RSS or other methods)
+        if: ${{ github.event.inputs.scraper_method != 'manual' }}
+        continue-on-error: true
+        run: |
+          echo "🔄 Trying fallback scraping methods..."
+          # Try to get data from Adobe's RSS feeds if they exist
+          go run cmd/simple-scraper/main.go || echo "Fallback scraper also failed"
+          
+      - name: Generate Hugo content
+        run: |
+          echo "🏗️  Generating Hugo content from bulletins database..."
+          go run cmd/content-generator/main.go generate
           
       - name: Check for changes
         id: changes
@@ -85,11 +100,16 @@ jobs:
           git add .
           if git diff --staged --quiet; then
             echo "changes=false" >> $GITHUB_OUTPUT
-            echo "No changes detected"
+            echo "ℹ️  No changes detected - no new bulletins found"
           else
             echo "changes=true" >> $GITHUB_OUTPUT
-            echo "Changes detected:"
+            echo "✅ Changes detected:"
             git diff --staged --name-only
+            echo ""
+            echo "📊 Summary:"
+            echo "- Bulletin database: $(git diff --staged --name-only | grep -c "security-bulletins.json" || echo "0") files"
+            echo "- Content files: $(git diff --staged --name-only | grep -c "\.md$" || echo "0") files"  
+            echo "- Static files: $(git diff --staged --name-only | grep -E "(\.xml|\.json)$" | grep -v security-bulletins.json | wc -l || echo "0") files"
           fi
           
       - name: Commit and push changes
@@ -102,11 +122,15 @@ jobs:
           NEW_FILES=$(git diff --staged --name-only | grep "\.md$" | wc -l)
           RSS_FILES=$(git diff --staged --name-only | grep "\.xml$" | wc -l)
           
-          # Create commit message
+          # Create commit message based on trigger type
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            COMMIT_MSG="Manual security bulletins update - $(date -u +"%Y-%m-%d %H:%M UTC")"
+            if [ "${{ github.event.inputs.scraper_method }}" = "manual" ]; then
+              COMMIT_MSG="Manual bulletin data import - $(date -u +"%Y-%m-%d %H:%M UTC")"
+            else
+              COMMIT_MSG="Manual scraper trigger - $(date -u +"%Y-%m-%d %H:%M UTC")"
+            fi
           else
-            COMMIT_MSG="Update security bulletins - $(date -u +"%Y-%m-%d %H:%M UTC")"
+            COMMIT_MSG="Automated bulletin update - $(date -u +"%Y-%m-%d %H:%M UTC")"
           fi
           
           if [ "$NEW_FILES" -gt 0 ]; then
@@ -119,15 +143,13 @@ jobs:
           🗞️  RSS feeds: ${RSS_FILES}"
           fi
           
-          # Add manual trigger info if applicable
+          # Add trigger-specific info
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            COMMIT_MSG="${COMMIT_MSG}
+          🤖 Method: ${{ github.event.inputs.scraper_method }}"
             if [ "${{ github.event.inputs.force_update }}" = "true" ]; then
               COMMIT_MSG="${COMMIT_MSG}
           🔄 Force update enabled"
-            fi
-            if [ -n "${{ github.event.inputs.products }}" ]; then
-              COMMIT_MSG="${COMMIT_MSG}
-          🎯 Products: ${{ github.event.inputs.products }}"
             fi
           fi
           
