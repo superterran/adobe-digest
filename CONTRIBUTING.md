@@ -1,6 +1,6 @@
-# Contributing to Adobe Security Digest
+# Contributing to Adobe Digest
 
-Thank you for your interest in contributing to Adobe Security Digest! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to Adobe Digest! This document provides guidelines and information for contributors.
 
 ## Code of Conduct
 

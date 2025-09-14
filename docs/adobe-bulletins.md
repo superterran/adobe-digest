@@ -730,6 +730,6 @@ The system automatically deploys to GitHub Pages via:
 
 ---
 
-*This document serves as the complete specification and implementation guide for the Adobe Security Bulletins RSS Feed Scraper project. Use this as the primary reference for development and maintenance activities.*
+*This document serves as the complete specification and implementation guide for the Adobe Digest security bulletin monitoring system. Use this as the primary reference for development and maintenance activities.*
 
 **Created by Doug Hatcher • Sponsored by Blue Acorn iCi**
