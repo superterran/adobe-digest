@@ -110,24 +110,24 @@ jobs:
           fi
           
           if [ "$NEW_FILES" -gt 0 ]; then
-            COMMIT_MSG="$COMMIT_MSG
+            COMMIT_MSG="${COMMIT_MSG}
 
-📄 Content files: $NEW_FILES"
+          📄 Content files: ${NEW_FILES}"
           fi
           if [ "$RSS_FILES" -gt 0 ]; then
-            COMMIT_MSG="$COMMIT_MSG
-🗞️  RSS feeds: $RSS_FILES"
+            COMMIT_MSG="${COMMIT_MSG}
+          🗞️  RSS feeds: ${RSS_FILES}"
           fi
           
           # Add manual trigger info if applicable
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             if [ "${{ github.event.inputs.force_update }}" = "true" ]; then
-              COMMIT_MSG="$COMMIT_MSG
-🔄 Force update enabled"
+              COMMIT_MSG="${COMMIT_MSG}
+          🔄 Force update enabled"
             fi
             if [ -n "${{ github.event.inputs.products }}" ]; then
-              COMMIT_MSG="$COMMIT_MSG
-🎯 Products: ${{ github.event.inputs.products }}"
+              COMMIT_MSG="${COMMIT_MSG}
+          🎯 Products: ${{ github.event.inputs.products }}"
             fi
           fi
           
