@@ -59,7 +59,7 @@ This directory contains custom Hugo layouts that provide the professional, brand
 --adobe-red-darker: #800000;
 
 /* Supporting Colors */
---text-primary: #1f2937;
+--text-primary: #942a2a;
 --text-secondary: #6b7280;
 --background: #ffffff;
 --border: #e5e7eb;
