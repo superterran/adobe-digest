@@ -73,9 +73,13 @@ func generateAllContent(dataFile string) {
 		log.Fatalf("Failed to generate Hugo content: %v", err)
 	}
 
-	// Generate RSS feed
+	// Generate RSS feeds (main and per-product)
 	if err := generateRSSFeed(db); err != nil {
 		log.Fatalf("Failed to generate RSS feed: %v", err)
+	}
+
+	if err := generateProductRSSFeeds(db); err != nil {
+		log.Fatalf("Failed to generate product RSS feeds: %v", err)
 	}
 
 	fmt.Println("✅ All content generated successfully!")
@@ -447,6 +451,125 @@ func generateRSSFeed(db *BulletinDatabase) error {
 	}
 
 	fmt.Printf("✅ Generated RSS feed with %d items\n", len(feed.Items))
+	return nil
+}
+
+func generateProductRSSFeeds(db *BulletinDatabase) error {
+	fmt.Println("📡 Generating product-specific RSS feeds...")
+
+	// Create feeds directory
+	feedsDir := "public/feeds"
+	if err := os.MkdirAll(feedsDir, 0755); err != nil {
+		return fmt.Errorf("creating feeds directory: %w", err)
+	}
+
+	// Group bulletins by product
+	productBulletins := make(map[string][]SecurityBulletin)
+	for _, bulletin := range db.Bulletins {
+		for _, product := range bulletin.Products {
+			cleanProduct := strings.ToLower(strings.ReplaceAll(product, " ", "-"))
+			productBulletins[cleanProduct] = append(productBulletins[cleanProduct], bulletin)
+		}
+	}
+
+	feedCount := 0
+	for product, bulletins := range productBulletins {
+		if len(bulletins) == 0 {
+			continue
+		}
+
+		// Create product-specific RSS feed
+		feed := &feeds.Feed{
+			Title:       fmt.Sprintf("Adobe %s Security Bulletins", strings.Title(strings.ReplaceAll(product, "-", " "))),
+			Link:        &feeds.Link{Href: fmt.Sprintf("https://adobedigest.com/products/%s/", product)},
+			Description: fmt.Sprintf("Security bulletins and advisories for Adobe %s", strings.Title(strings.ReplaceAll(product, "-", " "))),
+			Author:      &feeds.Author{Name: "Adobe Security Digest"},
+			Created:     db.LastUpdated,
+			Copyright:   "Adobe Inc. - Republished for community awareness",
+		}
+
+		// Add bulletins as RSS items (limit to 25 most recent)
+		recentBulletins := bulletins
+		if len(recentBulletins) > 25 {
+			recentBulletins = recentBulletins[:25]
+		}
+
+		for _, bulletin := range recentBulletins {
+			item := &feeds.Item{
+				Title: fmt.Sprintf("%s: %s", bulletin.APSB, bulletin.Title),
+				Link:  &feeds.Link{Href: bulletin.URL},
+				Description: fmt.Sprintf("%s\n\nProducts: %s\nSeverity: %s\n\nView full advisory: %s",
+					bulletin.Description,
+					strings.Join(bulletin.Products, ", "),
+					bulletin.Severity,
+					bulletin.URL),
+				Author:  &feeds.Author{Name: "Adobe Security Team"},
+				Created: bulletin.Date,
+				Id:      bulletin.APSB,
+			}
+			feed.Items = append(feed.Items, item)
+		}
+
+		// Generate RSS XML
+		rss, err := feed.ToRss()
+		if err != nil {
+			return fmt.Errorf("generating RSS for product %s: %w", product, err)
+		}
+
+		// Save product RSS file
+		rssFile := filepath.Join(feedsDir, fmt.Sprintf("%s.xml", product))
+		if err := os.WriteFile(rssFile, []byte(rss), 0644); err != nil {
+			return fmt.Errorf("writing RSS file for product %s: %w", product, err)
+		}
+
+		feedCount++
+	}
+
+	// Also create a general products RSS feed (all products combined)
+	allProductsFeed := &feeds.Feed{
+		Title:       "Adobe Products Security Updates",
+		Link:        &feeds.Link{Href: "https://adobedigest.com/products/"},
+		Description: "Security bulletins for all Adobe products - organized by product category",
+		Author:      &feeds.Author{Name: "Adobe Security Digest"},
+		Created:     db.LastUpdated,
+		Copyright:   "Adobe Inc. - Republished for community awareness",
+	}
+
+	// Add recent bulletins from all products
+	recentBulletins := db.Bulletins
+	if len(recentBulletins) > 50 {
+		recentBulletins = recentBulletins[:50]
+	}
+
+	for _, bulletin := range recentBulletins {
+		item := &feeds.Item{
+			Title: fmt.Sprintf("%s: %s", bulletin.APSB, bulletin.Title),
+			Link:  &feeds.Link{Href: bulletin.URL},
+			Description: fmt.Sprintf("%s\n\nProducts: %s\nSeverity: %s\n\nView full advisory: %s",
+				bulletin.Description,
+				strings.Join(bulletin.Products, ", "),
+				bulletin.Severity,
+				bulletin.URL),
+			Author:  &feeds.Author{Name: "Adobe Security Team"},
+			Created: bulletin.Date,
+			Id:      bulletin.APSB,
+		}
+		allProductsFeed.Items = append(allProductsFeed.Items, item)
+	}
+
+	// Generate all products RSS XML
+	allProductsRss, err := allProductsFeed.ToRss()
+	if err != nil {
+		return fmt.Errorf("generating all products RSS: %w", err)
+	}
+
+	// Save all products RSS file
+	allProductsRssFile := filepath.Join(feedsDir, "products.xml")
+	if err := os.WriteFile(allProductsRssFile, []byte(allProductsRss), 0644); err != nil {
+		return fmt.Errorf("writing all products RSS file: %w", err)
+	}
+
+	fmt.Printf("✅ Generated %d product-specific RSS feeds + 1 all-products feed\n", feedCount)
 	return nil
 }
 

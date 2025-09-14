@@ -70,22 +70,6 @@ title = "Adobe Digest"
     parent = "Products"
     url = "/products/?filter=experience"
     weight = 34
-  
-  [[menu.main]]
-    name = "ColdFusion"
-    parent = "Products"
-    url = "/products/?filter=coldfusion"
-    weight = 35
-  
-  [[menu.main]]
-    name = "RSS Feeds"
-    url = "/feeds/"
-    weight = 4
-  
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 5
 
 # Markup configuration for code highlighting
 [markup]
