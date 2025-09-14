@@ -1,10 +1,10 @@
-name: Scrape Adobe Security Bulletins
+name: "Adobe Security Bulletins Scraper"
 
 on:
   schedule:
     # Run every 6 hours (at 00:00, 06:00, 12:00, and 18:00 UTC)
     - cron: '0 */6 * * *'
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:
     inputs:
       force_update:
         description: 'Force update all bulletins (ignore cache)'
