@@ -27,8 +27,8 @@ on:
   push:
     branches: ["main"]
     paths: 
-      - "configs/scraper.yaml"
-      - "cmd/scraper/**"
+      - "cmd/adobe-scraper/**"
+      - "cmd/content-generator/**" 
       - "internal/**"
       - ".github/workflows/scraper.yml"
   
@@ -71,7 +71,7 @@ jobs:
         if: ${{ github.event.inputs.scraper_method != 'manual' }}
         run: |
           echo "🤖 Starting Adobe Security Bulletins automated scraper..."
-          go run cmd/auto-scraper/main.go
+          go run cmd/adobe-scraper/main.go auto
         env:
           TZ: UTC
           
@@ -79,15 +79,7 @@ jobs:
         if: ${{ github.event.inputs.scraper_method == 'manual' && github.event.inputs.bulletin_data != '' }}
         run: |
           echo "📝 Processing manual bulletin data..."
-          echo "${{ github.event.inputs.bulletin_data }}" | go run cmd/manual-parser/main.go
-          
-      - name: Run fallback scraper (try RSS or other methods)
-        if: ${{ github.event.inputs.scraper_method != 'manual' }}
-        continue-on-error: true
-        run: |
-          echo "🔄 Trying fallback scraping methods..."
-          # Try to get data from Adobe's RSS feeds if they exist
-          go run cmd/simple-scraper/main.go || echo "Fallback scraper also failed"
+          echo "${{ github.event.inputs.bulletin_data }}" | go run cmd/adobe-scraper/main.go manual
           
       - name: Generate Hugo content
         run: |
