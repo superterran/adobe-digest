@@ -1,8 +1,19 @@
 {
   "critical_count": 10,
-  "important_count": 145,
-  "last_updated": "September 14, 2025 at 7:24 PM",
+  "important_count": 146,
+  "last_updated": "September 14, 2025 at 7:29 PM",
   "recent_bulletins": [
+    {
+      "apsb": "APSB25-999",
+      "title": "APSB25-999: Security update for Adobe Test Product",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb25-999.html",
+      "date": "2025-09-14T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
     {
       "apsb": "APSB21-105",
       "title": "APSB21-105: \u003c/b\u003e Security update available for Adobe Animate\u003c/a\u003e\u003cbr /\u003e",
@@ -101,22 +112,11 @@
         "Adobe Product"
       ],
       "severity": "Important"
-    },
-    {
-      "apsb": "APSB20-25",
-      "title": "APSB20-25: Security update available",
-      "description": "Adobe has released security updates. More details in the security bulletin.",
-      "url": "https://helpx.adobe.com/security/products/other/apsb20-25.html",
-      "date": "2020-04-15T00:00:00Z",
-      "products": [
-        "Adobe Product"
-      ],
-      "severity": "Important"
     }
   ],
   "severity_stats": {
     "Critical": 10,
-    "Important": 145
+    "Important": 146
   },
-  "total_bulletins": 155
+  "total_bulletins": 156
 }

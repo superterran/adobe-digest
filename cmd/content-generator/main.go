@@ -219,6 +219,12 @@ func generateBulletinPage(bulletin SecurityBulletin, bulletinDir string) error {
 	filename := fmt.Sprintf("%s.md", strings.ToLower(bulletin.APSB))
 	filepath := filepath.Join(bulletinDir, filename)
 
+	// Clean title to avoid duplicating APSB ID
+	cleanTitle := bulletin.Title
+	if strings.HasPrefix(cleanTitle, bulletin.APSB+": ") {
+		cleanTitle = strings.TrimPrefix(cleanTitle, bulletin.APSB+": ")
+	}
+
 	// Generate frontmatter and content
 	content := fmt.Sprintf(`---
 title: "%s: %s"
@@ -256,14 +262,14 @@ For complete details, patches, and remediation steps, please refer to the offici
 
 *This information is sourced from Adobe's official Product Security Incident Response Team (PSIRT) advisories. Always refer to the official Adobe advisory for authoritative information and remediation guidance.*
 `,
-		bulletin.APSB, bulletin.Title,
+		bulletin.APSB, cleanTitle,
 		bulletin.Description,
 		bulletin.Date.Format("2006-01-02T15:04:05Z07:00"),
 		bulletin.APSB,
 		bulletin.Severity,
 		formatProductsForYAML(bulletin.Products),
 		bulletin.URL,
-		bulletin.APSB, bulletin.Title,
+		bulletin.APSB, cleanTitle,
 		bulletin.Severity,
 		bulletin.Date.Format("January 2, 2006"),
 		strings.Join(bulletin.Products, ", "),

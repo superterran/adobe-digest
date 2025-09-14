@@ -2,7 +2,7 @@
 title: "Adobe Product Security Bulletins"
 description: "Security bulletins and advisories for Adobe Product"
 product: "Adobe Product"
-bulletin_count: 55
+bulletin_count: 56
 draft: false
 ---
 
@@ -12,12 +12,20 @@ This page contains all security bulletins for **Adobe Product**.
 
 ## Statistics
 
-- **Total Bulletins**: 55
+- **Total Bulletins**: 56
 - **Critical**: 0
-- **Important**: 55
+- **Important**: 56
 - **Moderate**: 0
 
 ## Recent Bulletins
+
+### [APSB25-999](https://helpx.adobe.com/security/products/other/apsb25-999.html) - APSB25-999: Security update for Adobe Test Product
+
+**Date**: September 14, 2025 | **Severity**: Important
+
+Adobe has released security updates. More details in the security bulletin.
+
+---
 
 ### [APSB19-45](https://helpx.adobe.com/security/products/other/apsb19-45.html) - APSB19-45: Security update available
 

@@ -1,6 +1,17 @@
 {
-  "last_updated": "2025-09-14T19:24:59.9176691Z",
+  "last_updated": "2025-09-14T19:29:40.123373428Z",
   "bulletins": [
+    {
+      "apsb": "APSB25-999",
+      "title": "APSB25-999: Security update for Adobe Test Product",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb25-999.html",
+      "date": "2025-09-14T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
     {
       "apsb": "APSB21-105",
       "title": "APSB21-105: \u003c/b\u003e Security update available for Adobe Animate\u003c/a\u003e\u003cbr /\u003e",

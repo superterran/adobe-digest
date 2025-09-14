@@ -364,6 +364,9 @@ func extractBulletinsFromText(text string) []SecurityBulletin {
 					title = "Security update available"
 				}
 
+				// Clean title - remove APSB ID if it's already at the beginning
+				title = cleanTitleRemoveAPSB(title, apsbID)
+
 				// Generate URL
 				url := generateBulletinURL(apsbID, title)
 
@@ -912,6 +915,9 @@ func extractBulletinsWithEnhancedPatterns(content string) []SecurityBulletin {
 					title = "Security update available"
 				}
 
+				// Clean title - remove APSB ID if it's already at the beginning
+				title = cleanTitleRemoveAPSB(title, apsbID)
+
 				bulletin := SecurityBulletin{
 					APSB:        apsbID,
 					Title:       fmt.Sprintf("%s: %s", apsbID, title),
@@ -981,4 +987,29 @@ func jsonToBulletin(data map[string]interface{}) SecurityBulletin {
 	}
 
 	return bulletin
+}
+
+func cleanTitleRemoveAPSB(title, apsbID string) string {
+	if title == "" {
+		return title
+	}
+
+	// Remove APSB ID from the beginning if it exists
+	// Handle patterns like "APSB18-35: " or "APSB18-35 : " or "APSB18-35 - "
+	patterns := []string{
+		apsbID + ": ",
+		apsbID + " : ",
+		apsbID + " - ",
+		apsbID + ":",
+		apsbID + " ",
+	}
+
+	for _, pattern := range patterns {
+		if strings.HasPrefix(title, pattern) {
+			title = strings.TrimSpace(title[len(pattern):])
+			break
+		}
+	}
+
+	return title
 }
