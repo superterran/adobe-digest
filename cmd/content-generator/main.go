@@ -78,11 +78,6 @@ func generateAllContent(dataFile string) {
 		log.Fatalf("Failed to generate RSS feed: %v", err)
 	}
 
-	// Generate homepage data
-	if err := generateHomepageData(db); err != nil {
-		log.Fatalf("Failed to generate homepage data: %v", err)
-	}
-
 	fmt.Println("✅ All content generated successfully!")
 }
 
@@ -452,61 +447,6 @@ func generateRSSFeed(db *BulletinDatabase) error {
 	}
 
 	fmt.Printf("✅ Generated RSS feed with %d items\n", len(feed.Items))
-	return nil
-}
-
-func generateHomepageData(db *BulletinDatabase) error {
-	fmt.Println("🏠 Generating homepage data...")
-
-	// Calculate statistics
-	severityStats := make(map[string]int)
-	for _, bulletin := range db.Bulletins {
-		severityStats[bulletin.Severity]++
-	}
-
-	// Get recent bulletins (last 10)
-	recentBulletins := db.Bulletins
-	if len(recentBulletins) > 10 {
-		recentBulletins = recentBulletins[:10]
-	}
-
-	// Create homepage data
-	homePageData := map[string]interface{}{
-		"last_updated":     db.LastUpdated.Format("January 2, 2006 at 3:04 PM"),
-		"recent_bulletins": recentBulletins,
-		"total_bulletins":  len(db.Bulletins),
-		"critical_count":   severityStats["Critical"],
-		"important_count":  severityStats["Important"],
-		"severity_stats":   severityStats,
-	}
-
-	// Save homepage data
-	outputFile := "data/homepage.json"
-	if err := os.MkdirAll(filepath.Dir(outputFile), 0755); err != nil {
-		return fmt.Errorf("creating data directory: %w", err)
-	}
-
-	data, err := json.MarshalIndent(homePageData, "", "  ")
-	if err != nil {
-		return fmt.Errorf("marshaling homepage data: %w", err)
-	}
-
-	if err := os.WriteFile(outputFile, data, 0644); err != nil {
-		return fmt.Errorf("writing homepage data: %w", err)
-	}
-
-	// Also copy to assets for Hugo
-	assetsDir := "assets/data"
-	if err := os.MkdirAll(assetsDir, 0755); err != nil {
-		return fmt.Errorf("creating assets directory: %w", err)
-	}
-
-	assetsFile := filepath.Join(assetsDir, "homepage.json")
-	if err := os.WriteFile(assetsFile, data, 0644); err != nil {
-		return fmt.Errorf("writing assets homepage data: %w", err)
-	}
-
-	fmt.Println("✅ Generated homepage data")
 	return nil
 }
 
