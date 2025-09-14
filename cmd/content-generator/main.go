@@ -135,7 +135,7 @@ func cleanGeneratedContent() {
 		"static/adobe-security.xml",
 		"static/feeds",
 		"public/adobe-security.xml", // Legacy cleanup
-		"public/feeds", // Legacy cleanup
+		"public/feeds",              // Legacy cleanup
 	}
 
 	for _, file := range feedFiles {
