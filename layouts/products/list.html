@@ -5,62 +5,119 @@
         margin: 0 auto;
         padding: 2rem;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: var(--hx-color-dark);
+        min-height: 100vh;
+        color: #e2e8f0;
     }
     
     .products-header {
+        background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f97316 100%);
+        color: white;
+        padding: 3rem 2rem;
+        border-radius: 20px;
         margin-bottom: 3rem;
+        box-shadow: 0 20px 40px rgba(239,68,68,0.3);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.1);
         text-align: center;
     }
     
+    .products-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        transform: translate(50%, -50%);
+    }
+    
+    .products-header::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+        width: 100px;
+        height: 100px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 50%;
+    }
+    
     .products-header h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #942a2a;
+        font-size: 3rem;
+        font-weight: 800;
         margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
     }
     
     .products-header p {
-        font-size: 1.1rem;
-        color: #6b7280;
+        font-size: 1.2rem;
+        opacity: 0.95;
         line-height: 1.6;
+        position: relative;
+        z-index: 1;
+        max-width: 600px;
+        margin: 0 auto;
     }
     
     .products-content {
+        background: #1a1a1a;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         margin-bottom: 3rem;
+        border: 1px solid #2a2a2a;
         line-height: 1.7;
     }
     
     .products-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
         margin-top: 2rem;
     }
     
     .product-card {
-        background: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 8px;
-        padding: 1.5rem;
-        transition: all 0.2s ease;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 16px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .product-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ef4444, #f97316);
     }
     
     .product-card:hover {
         border-color: #ef4444;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+        transform: translateY(-4px) scale(1.02);
     }
     
     .product-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
     }
     
     .product-title a {
-        color: #942a2a;
+        color: #f1f5f9;
         text-decoration: none;
+        transition: color 0.2s ease;
     }
     
     .product-title a:hover {
@@ -71,22 +128,27 @@
         display: flex;
         align-items: center;
         font-size: 0.875rem;
-        color: #6b7280;
-        margin-bottom: 0.75rem;
+        color: #94a3b8;
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem;
+        background: #141414;
+        border-radius: 8px;
+        border: 1px solid #2a2a2a;
     }
     
     .product-icon {
-        width: 14px;
-        height: 14px;
-        margin-right: 0.5rem;
-        opacity: 0.7;
+        width: 16px;
+        height: 16px;
+        margin-right: 0.75rem;
+        opacity: 0.8;
+        color: #ef4444;
     }
     
     .product-description {
-        color: #6b7280;
-        font-size: 0.875rem;
-        margin-bottom: 1rem;
-        line-height: 1.5;
+        color: #94a3b8;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
     }
     
     .product-link {
@@ -95,49 +157,99 @@
         color: #ef4444;
         text-decoration: none;
         font-size: 0.875rem;
-        font-weight: 500;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        background: rgba(239,68,68,0.1);
+        border: 1px solid rgba(239,68,68,0.2);
+        transition: all 0.2s ease;
     }
     
     .product-link:hover {
-        color: #dc2626;
+        color: white;
+        background: #ef4444;
+        border-color: #ef4444;
+        transform: translateY(-1px);
     }
     
     .product-link svg {
-        width: 14px;
-        height: 14px;
-        margin-left: 0.25rem;
+        width: 16px;
+        height: 16px;
+        margin-left: 0.5rem;
+    }
+    
+    .product-link[href*="/feeds/"]:hover {
+        background: #10b981 !important;
+        border-color: #10b981 !important;
+        color: white !important;
     }
     
     .products-help {
         margin-top: 3rem;
-        padding: 1.5rem;
-        background: #f9fafb;
-        border-radius: 8px;
+        padding: 2rem;
+        background: #1a1a1a;
+        border-radius: 16px;
+        border-left: 4px solid #ef4444;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        border: 1px solid #2a2a2a;
         border-left: 4px solid #ef4444;
     }
     
     .products-help h3 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #942a2a;
-        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #f1f5f9;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .products-help h3::before {
+        content: '❓';
+        font-size: 1rem;
     }
     
     .products-help p {
-        color: #6b7280;
-        line-height: 1.6;
-        margin-bottom: 0.5rem;
+        color: #94a3b8;
+        line-height: 1.7;
+        margin-bottom: 1rem;
     }
     
     .products-help a {
         color: #ef4444;
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        background: rgba(239,68,68,0.1);
+        border: 1px solid rgba(239,68,68,0.2);
+        transition: all 0.2s ease;
     }
     
     .products-help a:hover {
-        color: #dc2626;
-        text-decoration: underline;
+        color: white;
+        background: #ef4444;
+        border-color: #ef4444;
+        text-decoration: none;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #f1f5f9;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .section-title::before {
+        content: '';
+        width: 4px;
+        height: 24px;
+        background: linear-gradient(to bottom, #ef4444, #f97316);
+        border-radius: 2px;
     }
     
     @media (max-width: 768px) {
@@ -145,12 +257,29 @@
             padding: 1rem;
         }
         
+        .products-header {
+            padding: 2rem 1.5rem;
+        }
+        
         .products-header h1 {
-            font-size: 2rem;
+            font-size: 2.25rem;
+        }
+        
+        .products-content {
+            padding: 1.5rem;
         }
         
         .products-grid {
             grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .product-card {
+            padding: 1.5rem;
+        }
+        
+        .products-help {
+            padding: 1.5rem;
         }
     }
 </style>
@@ -161,12 +290,8 @@
         <p>{{ .Description }}</p>
     </header>
 
-    <div class="products-content">
-        {{ .Content }}
-    </div>
-
-    <div>
-        <h2 style="font-size: 1.5rem; font-weight: 600; color: #942a2a; margin-bottom: 1.5rem;">All Adobe Products</h2>
+   <div>
+        <h2 class="section-title">All Adobe Products</h2>
         
         <div class="products-grid">
             {{ range .Pages.ByTitle }}
@@ -202,11 +327,11 @@
                         </a>
                         
                         {{ $productSlug := .File.BaseFileName }}
-                        <a href="/feeds/{{ $productSlug }}.xml" class="product-link" title="RSS feed for {{ .Params.product | default .Title }}" style="font-size: 0.75rem;">
-                            <svg fill="currentColor" viewBox="0 0 20 20" style="width: 12px; height: 12px;">
+                        <a href="/feeds/{{ $productSlug }}.xml" class="product-link" title="RSS feed for {{ .Params.product | default .Title }}" style="font-size: 0.75rem; background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.2); color: #10b981;">
+                            <svg fill="currentColor" viewBox="0 0 20 20" style="width: 14px; height: 14px;">
                                 <path d="M3.429 2.063c8.944 0 16.2 7.256 16.2 16.2h-3.464c0-7.027-5.709-12.736-12.736-12.736v-3.464zm0 6.93c3.658 0 6.626 2.967 6.626 6.625h-3.464c0-1.746-1.417-3.163-3.162-3.163v-3.462zm-1.12 6.929c1.075 0 1.947.872 1.947 1.947s-.872 1.948-1.947 1.948-1.948-.873-1.948-1.948.873-1.947 1.948-1.947z"/>
                             </svg>
-                            RSS
+                            📡 RSS
                         </a>
                     </div>
                 </div>
