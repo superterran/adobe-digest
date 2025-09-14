@@ -2,7 +2,7 @@
 title: "Adobe Animate Security Bulletins"
 description: "Security bulletins and advisories for Adobe Animate"
 product: "Adobe Animate"
-bulletin_count: 4
+bulletin_count: 5
 draft: false
 ---
 
@@ -12,12 +12,20 @@ This page contains all security bulletins for **Adobe Animate**.
 
 ## Statistics
 
-- **Total Bulletins**: 4
+- **Total Bulletins**: 5
 - **Critical**: 0
-- **Important**: 4
+- **Important**: 5
 - **Moderate**: 0
 
 ## Recent Bulletins
+
+### [APSB21-105](https://helpx.adobe.com/security/products/animate/apsb21-105.html) - APSB21-105: </b> Security update available for Adobe Animate</a><br />
+
+**Date**: December 15, 2021 | **Severity**: Important
+
+Adobe has released security updates. More details in the security bulletin.
+
+---
 
 ### [APSB25-73](https://helpx.adobe.com/security/products/animate/apsb25-73.html) - APSB25-73: Security update available for Adobe Animate
 

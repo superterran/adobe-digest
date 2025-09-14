@@ -4,26 +4,32 @@ This directory contains various command-line tools for managing Adobe security b
 
 ## Available Tools
 
-### 🤖 auto-scraper
-**Automated bulletin scraper for GitHub Actions**
+### 🤖 adobe-scraper
+**Unified scraper with multiple modes**
 ```bash
-go run cmd/auto-scraper/main.go
+go run cmd/adobe-scraper/main.go <command>
 ```
-- Fetches Adobe's security bulletin page automatically
-- Parses bulletin data from HTML content  
-- Updates the database with new bulletins
-- Designed for GitHub Actions automation
-- Handles duplicate detection and date estimation
 
-### 📝 manual-parser  
-**Interactive parser for manual data input**
+**Commands:**
+- `auto` - Try automated scraping (may not work due to JavaScript)
+- `manual` - Parse bulletin data from stdin (recommended)
+- `import <file>` - Import bulletins from JSON file
+- `test` - Test connection to Adobe's page
+
+**Examples:**
 ```bash
-echo "bulletin data" | go run cmd/manual-parser/main.go
+# Test connection
+go run cmd/adobe-scraper/main.go test
+
+# Manual input (most reliable)
+echo "| APSB25-85 : Title | 09/14/2025 | 09/14/2025 |" | go run cmd/adobe-scraper/main.go manual
+
+# Try automated (likely to fail)
+go run cmd/adobe-scraper/main.go auto
+
+# Import from file
+go run cmd/adobe-scraper/main.go import bulletins.json
 ```
-- Processes bulletin data from stdin (paste and Ctrl+D)
-- Supports table format: `| APSB25-85 : Title | Date | Date |`
-- Best for adding new bulletins when automated scraping fails
-- Integrates with existing database seamlessly
 
 ### 🏗️ content-generator
 **Hugo site content generator**
@@ -35,15 +41,6 @@ go run cmd/content-generator/main.go generate
 - Builds interactive homepage with filtering
 - Essential for updating the site after adding bulletins
 
-### 🔍 debug-scraper
-**Debug tool for analyzing Adobe's page structure**
-```bash
-go run cmd/debug-scraper/main.go
-```
-- Downloads and analyzes Adobe's security page
-- Shows content structure and parsing issues
-- Helpful for troubleshooting scraping problems
-
 ### 📦 bulk-importer
 **Import multiple bulletins from JSON**
 ```bash
@@ -53,37 +50,21 @@ go run cmd/bulk-importer/main.go
 - Useful for large data migrations
 - Maintains database integrity
 
-### 🕷️ scraper (legacy)
-**Original comprehensive scraper**
-```bash
-go run cmd/scraper/main.go
-```
-- Complex HTML parsing approach
-- May not work reliably due to Adobe's dynamic content
-- Kept for reference
-
-### 🎯 simple-scraper (legacy)  
-**Simplified regex-based scraper**
-```bash
-go run cmd/simple-scraper/main.go
-```
-- Regex pattern matching approach
-- Limited effectiveness with Adobe's current page structure
-- Fallback option
-
 ## Recommended Workflow
 
 For **manual updates** (most reliable):
 1. Visit https://helpx.adobe.com/security/security-bulletin.html
 2. Copy recent bulletin table data
-3. Run: `echo "table data" | go run cmd/manual-parser/main.go`
+3. Run: `echo "table data" | go run cmd/adobe-scraper/main.go manual`
 4. Run: `go run cmd/content-generator/main.go generate`
 5. Commit and push changes
 
 For **automated updates** (GitHub Actions):
-- The `auto-scraper` runs every 6 hours via GitHub Actions
-- Falls back to manual parser if needed
+- The `adobe-scraper auto` runs every 6 hours via GitHub Actions
+- Falls back to manual approach if automated scraping fails
 - Automatically generates content and deploys
+
+**Note**: Adobe's page uses JavaScript to load bulletin data dynamically, so automated scraping typically doesn't work. The manual approach is much more reliable.
 
 ## Database Structure
 

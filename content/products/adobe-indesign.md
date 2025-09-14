@@ -2,7 +2,7 @@
 title: "Adobe InDesign Security Bulletins"
 description: "Security bulletins and advisories for Adobe InDesign"
 product: "Adobe InDesign"
-bulletin_count: 6
+bulletin_count: 7
 draft: false
 ---
 
@@ -12,12 +12,20 @@ This page contains all security bulletins for **Adobe InDesign**.
 
 ## Statistics
 
-- **Total Bulletins**: 6
+- **Total Bulletins**: 7
 - **Critical**: 0
-- **Important**: 6
+- **Important**: 7
 - **Moderate**: 0
 
 ## Recent Bulletins
+
+### [APSB21-107](https://helpx.adobe.com/security/products/indesign/apsb21-107.html) - APSB21-107: </b> Security update available for Adobe InDesign</a><br />
+
+**Date**: December 15, 2021 | **Severity**: Important
+
+Adobe has released security updates. More details in the security bulletin.
+
+---
 
 ### [APSB25-79](https://helpx.adobe.com/security/products/indesign/apsb25-79.html) - APSB25-79: Security update available for Adobe InDesign
 

@@ -2,7 +2,7 @@
 title: "Adobe Photoshop Security Bulletins"
 description: "Security bulletins and advisories for Adobe Photoshop"
 product: "Adobe Photoshop"
-bulletin_count: 5
+bulletin_count: 6
 draft: false
 ---
 
@@ -12,12 +12,20 @@ This page contains all security bulletins for **Adobe Photoshop**.
 
 ## Statistics
 
-- **Total Bulletins**: 5
+- **Total Bulletins**: 6
 - **Critical**: 0
-- **Important**: 5
+- **Important**: 6
 - **Moderate**: 0
 
 ## Recent Bulletins
+
+### [APSB21-109](https://helpx.adobe.com/security/products/photoshop/apsb21-109.html) - APSB21-109: </b> Security update available for Adobe Photoshop</a><br />
+
+**Date**: December 15, 2021 | **Severity**: Important
+
+Adobe has released security updates. More details in the security bulletin.
+
+---
 
 ### [APSB25-75](https://helpx.adobe.com/security/products/photoshop/apsb25-75.html) - APSB25-75: Security update available for Adobe Photoshop
 

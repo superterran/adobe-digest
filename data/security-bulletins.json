@@ -1,6 +1,633 @@
 {
-  "last_updated": "2025-09-14T18:58:48.328270862Z",
+  "last_updated": "2025-09-14T19:24:59.9176691Z",
   "bulletins": [
+    {
+      "apsb": "APSB21-105",
+      "title": "APSB21-105: \u003c/b\u003e Security update available for Adobe Animate\u003c/a\u003e\u003cbr /\u003e",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/animate/apsb21-105.html",
+      "date": "2021-12-15T00:00:00Z",
+      "products": [
+        "Adobe Animate"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB19-45",
+      "title": "APSB19-45: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb19-45.html",
+      "date": "2019-06-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB19-57",
+      "title": "APSB19-57: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb19-57.html",
+      "date": "2019-08-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-60",
+      "title": "APSB21-60: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-60.html",
+      "date": "2021-08-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-06",
+      "title": "APSB21-06: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-06.html",
+      "date": "2021-01-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB22-34",
+      "title": "APSB22-34: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb22-34.html",
+      "date": "2022-05-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB22-21",
+      "title": "APSB22-21: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb22-21.html",
+      "date": "2022-03-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-95",
+      "title": "APSB21-95: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-95.html",
+      "date": "2021-12-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-59",
+      "title": "APSB21-59: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-59.html",
+      "date": "2021-08-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB20-25",
+      "title": "APSB20-25: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb20-25.html",
+      "date": "2020-04-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB19-32",
+      "title": "APSB19-32: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb19-32.html",
+      "date": "2019-05-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB20-26",
+      "title": "APSB20-26: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb20-26.html",
+      "date": "2020-04-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB20-49",
+      "title": "APSB20-49: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb20-49.html",
+      "date": "2020-07-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB19-51",
+      "title": "APSB19-51: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb19-51.html",
+      "date": "2019-07-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB20-58",
+      "title": "APSB20-58: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb20-58.html",
+      "date": "2020-08-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB20-30",
+      "title": "APSB20-30: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb20-30.html",
+      "date": "2020-04-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB20-06",
+      "title": "APSB20-06: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb20-06.html",
+      "date": "2020-01-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB19-46",
+      "title": "APSB19-46: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb19-46.html",
+      "date": "2019-06-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB19-30",
+      "title": "APSB19-30: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb19-30.html",
+      "date": "2019-04-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB19-26",
+      "title": "APSB19-26: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb19-26.html",
+      "date": "2019-04-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB19-19",
+      "title": "APSB19-19: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb19-19.html",
+      "date": "2019-03-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB19-06",
+      "title": "APSB19-06: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb19-06.html",
+      "date": "2019-01-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB19-01",
+      "title": "APSB19-01: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb19-01.html",
+      "date": "2019-01-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB18-42",
+      "title": "APSB18-42: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb18-42.html",
+      "date": "2018-06-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB18-44",
+      "title": "APSB18-44: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb18-44.html",
+      "date": "2018-06-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB18-39",
+      "title": "APSB18-39: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb18-39.html",
+      "date": "2018-05-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB18-35",
+      "title": "APSB18-35: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb18-35.html",
+      "date": "2018-05-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB18-31",
+      "title": "APSB18-31: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb18-31.html",
+      "date": "2018-04-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB18-25",
+      "title": "APSB18-25: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb18-25.html",
+      "date": "2018-04-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB18-24",
+      "title": "APSB18-24: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb18-24.html",
+      "date": "2018-04-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB18-19",
+      "title": "APSB18-19: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb18-19.html",
+      "date": "2018-03-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-81",
+      "title": "APSB21-81: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-81.html",
+      "date": "2021-11-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-27",
+      "title": "APSB21-27: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-27.html",
+      "date": "2021-04-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB20-42",
+      "title": "APSB20-42: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb20-42.html",
+      "date": "2020-06-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB20-12",
+      "title": "APSB20-12: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb20-12.html",
+      "date": "2020-02-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-107",
+      "title": "APSB21-107: \u003c/b\u003e Security update available for Adobe InDesign\u003c/a\u003e\u003cbr /\u003e",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/indesign/apsb21-107.html",
+      "date": "2021-12-15T00:00:00Z",
+      "products": [
+        "Adobe InDesign"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-97",
+      "title": "APSB21-97: \u003c/b\u003e Security update available for Adobe Lightroom Classic\u003c/a\u003e\u003cbr /\u003e",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/lightroom/apsb21-97.html",
+      "date": "2021-12-15T00:00:00Z",
+      "products": [
+        "Adobe Lightroom"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-99",
+      "title": "APSB21-99: \u003c/b\u003e Security update available for Adobe Media Encoder\u003c/a\u003e\u003cbr /\u003e",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-99.html",
+      "date": "2021-12-15T00:00:00Z",
+      "products": [
+        "Adobe Media Encoder"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB20-60",
+      "title": "APSB20-60: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb20-60.html",
+      "date": "2020-08-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-34",
+      "title": "APSB21-34: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-34.html",
+      "date": "2021-05-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-109",
+      "title": "APSB21-109: \u003c/b\u003e Security update available for Adobe Photoshop\u003c/a\u003e\u003cbr /\u003e",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/photoshop/apsb21-109.html",
+      "date": "2021-12-15T00:00:00Z",
+      "products": [
+        "Adobe Photoshop"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB22-43",
+      "title": "APSB22-43: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb22-43.html",
+      "date": "2022-06-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-106",
+      "title": "APSB21-106: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-106.html",
+      "date": "2021-12-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-78",
+      "title": "APSB21-78: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-78.html",
+      "date": "2021-10-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-47",
+      "title": "APSB21-47: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-47.html",
+      "date": "2021-06-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB24-58",
+      "title": "APSB24-58: \u003c/b\u003e Security update available for Adobe Premiere Pro\u003c/a\u003e\u003cbr /\u003e",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/premiere/apsb24-58.html",
+      "date": "2024-08-15T00:00:00Z",
+      "products": [
+        "Adobe Premiere Pro"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-100",
+      "title": "APSB21-100: \u003c/b\u003e Security update available for Adobe Premiere Pro\u003c/a\u003e\u003cbr /\u003e",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/premiere/apsb21-100.html",
+      "date": "2021-12-15T00:00:00Z",
+      "products": [
+        "Adobe Premiere Pro"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-89",
+      "title": "APSB21-89: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-89.html",
+      "date": "2021-12-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB20-50",
+      "title": "APSB20-50: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb20-50.html",
+      "date": "2020-07-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-88",
+      "title": "APSB21-88: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-88.html",
+      "date": "2021-12-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB22-10",
+      "title": "APSB22-10: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb22-10.html",
+      "date": "2022-02-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-20",
+      "title": "APSB21-20: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-20.html",
+      "date": "2021-03-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB18-38",
+      "title": "APSB18-38: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb18-38.html",
+      "date": "2018-05-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB19-22",
+      "title": "APSB19-22: Security update available",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb19-22.html",
+      "date": "2019-03-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB21-108",
+      "title": "APSB21-108: \u003c/b\u003e Security update available for Adobe XMP Toolkit SDK \u003c/a\u003e\u003cbr /\u003e",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb21-108.html",
+      "date": "2021-12-15T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-100",
+      "title": "APSB25-100: Security update for Adobe Test Product 2",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb25-100.html",
+      "date": "2025-09-14T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
+    {
+      "apsb": "APSB25-99",
+      "title": "APSB25-99: Security update for Adobe Test Product",
+      "description": "Adobe has released security updates. More details in the security bulletin.",
+      "url": "https://helpx.adobe.com/security/products/other/apsb25-99.html",
+      "date": "2025-09-14T00:00:00Z",
+      "products": [
+        "Adobe Product"
+      ],
+      "severity": "Important"
+    },
     {
       "apsb": "APSB25-85",
       "title": "APSB25-85: Security update available for Adobe Acrobat Reader",
