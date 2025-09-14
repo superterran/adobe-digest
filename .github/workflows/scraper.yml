@@ -5,6 +5,17 @@ on:
     # Run every 6 hours (at 00:00, 06:00, 12:00, and 18:00 UTC)
     - cron: '0 */6 * * *'
   workflow_dispatch:  # Allow manual trigger
+    inputs:
+      force_update:
+        description: 'Force update all bulletins (ignore cache)'
+        required: false
+        default: false
+        type: boolean
+      products:
+        description: 'Comma-separated list of products to scrape (empty = all)'
+        required: false
+        default: ''
+        type: string
   push:
     branches: ["main"]
     paths: 
@@ -51,7 +62,20 @@ jobs:
       - name: Run scraper
         run: |
           echo "Starting Adobe Security Bulletins scraper..."
-          go run cmd/scraper/main.go
+          SCRAPER_ARGS=""
+          
+          if [ "${{ github.event.inputs.force_update }}" = "true" ]; then
+            echo "🔄 Force update enabled - ignoring cache"
+            SCRAPER_ARGS="$SCRAPER_ARGS --force-update"
+          fi
+          
+          if [ -n "${{ github.event.inputs.products }}" ]; then
+            echo "🎯 Targeting specific products: ${{ github.event.inputs.products }}"
+            SCRAPER_ARGS="$SCRAPER_ARGS --products=${{ github.event.inputs.products }}"
+          fi
+          
+          echo "Running: go run cmd/scraper/main.go $SCRAPER_ARGS"
+          go run cmd/scraper/main.go $SCRAPER_ARGS
         env:
           TZ: UTC
           
@@ -79,7 +103,12 @@ jobs:
           RSS_FILES=$(git diff --staged --name-only | grep "\.xml$" | wc -l)
           
           # Create commit message
-          COMMIT_MSG="Update security bulletins - $(date -u +"%Y-%m-%d %H:%M UTC")"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            COMMIT_MSG="Manual security bulletins update - $(date -u +"%Y-%m-%d %H:%M UTC")"
+          else
+            COMMIT_MSG="Update security bulletins - $(date -u +"%Y-%m-%d %H:%M UTC")"
+          fi
+          
           if [ "$NEW_FILES" -gt 0 ]; then
             COMMIT_MSG="$COMMIT_MSG
 
@@ -88,6 +117,18 @@ jobs:
           if [ "$RSS_FILES" -gt 0 ]; then
             COMMIT_MSG="$COMMIT_MSG
 🗞️  RSS feeds: $RSS_FILES"
+          fi
+          
+          # Add manual trigger info if applicable
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ github.event.inputs.force_update }}" = "true" ]; then
+              COMMIT_MSG="$COMMIT_MSG
+🔄 Force update enabled"
+            fi
+            if [ -n "${{ github.event.inputs.products }}" ]; then
+              COMMIT_MSG="$COMMIT_MSG
+🎯 Products: ${{ github.event.inputs.products }}"
+            fi
           fi
           
           git commit -m "$COMMIT_MSG"

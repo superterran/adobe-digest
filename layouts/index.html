@@ -77,34 +77,62 @@
         
         <h3 class="mt-3 text-lg font-semibold">
           <a href="{{ .RelPermalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400">
-            {{ .Params.bulletin_id | default .Title }}
+            {{ if .Params.cves }}
+              {{ if eq (len .Params.cves) 1 }}
+                {{ index .Params.cves 0 }}
+              {{ else }}
+                {{ index .Params.cves 0 }} +{{ sub (len .Params.cves) 1 }} more
+              {{ end }}
+            {{ else if .Params.bulletin_id }}
+              {{ .Params.bulletin_id }}
+            {{ else if .Params.apsb_id }}
+              {{ .Params.apsb_id }}
+            {{ else }}
+              {{ .Params.product }} Security Update
+            {{ end }}
           </a>
         </h3>
         
         <p class="mt-2 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
-          {{ .Params.product }} security update
+          {{ .Params.product }}
+          {{ if .Params.bulletin_id }}
+            • {{ .Params.bulletin_id }}
+          {{ end }}
           {{ if .Params.cvss_max }}
             • CVSS {{ .Params.cvss_max }}
           {{ end }}
-          {{ if .Params.cves }}
-            • {{ len .Params.cves }} CVE{{ if gt (len .Params.cves) 1 }}s{{ end }}
+          {{ if .Params.affected_versions }}
+            • {{ len .Params.affected_versions }} version{{ if gt (len .Params.affected_versions) 1 }}s{{ end }}
           {{ end }}
         </p>
         
-        {{ if .Params.cves }}
         <div class="mt-3 flex flex-wrap gap-1">
-          {{ range first 3 .Params.cves }}
-          <span class="inline-flex items-center rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">
-            {{ . }}
-          </span>
-          {{ end }}
-          {{ if gt (len .Params.cves) 3 }}
-          <span class="inline-flex items-center rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">
-            +{{ sub (len .Params.cves) 3 }} more
-          </span>
+          {{ if .Params.affected_versions }}
+            {{ range first 2 .Params.affected_versions }}
+            <span class="inline-flex items-center rounded bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900/20 dark:text-blue-300">
+              {{ .version }}
+            </span>
+            {{ end }}
+            {{ if gt (len .Params.affected_versions) 2 }}
+            <span class="inline-flex items-center rounded bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900/20 dark:text-blue-300">
+              +{{ sub (len .Params.affected_versions) 2 }} more
+            </span>
+            {{ end }}
+          {{ else if .Params.cves }}
+            {{ if gt (len .Params.cves) 1 }}
+              {{ range first 2 (slice .Params.cves 1) }}
+              <span class="inline-flex items-center rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                {{ . }}
+              </span>
+              {{ end }}
+              {{ if gt (len .Params.cves) 3 }}
+              <span class="inline-flex items-centers rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                +{{ sub (len .Params.cves) 3 }} more
+              </span>
+              {{ end }}
+            {{ end }}
           {{ end }}
         </div>
-        {{ end }}
       </div>
       {{ end }}
     </div>
