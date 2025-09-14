@@ -24,3 +24,21 @@ clean-all: ## wipe everything including build outputs and caches
   @echo "Complete cleanup finished"
 
 dev: clean-scraped run ## clean scraped content and start dev server
+
+scrape: ## run the automated scraper to fetch new bulletins
+  @echo "🤖 Running automated scraper..."
+  go run cmd/auto-scraper/main.go
+  @echo "🏗️  Generating Hugo content..."
+  go run cmd/content-generator/main.go generate
+  @echo "✅ Scraping and content generation complete!"
+
+scrape-manual: ## run manual parser (paste bulletin data and press Ctrl+D)
+  @echo "📝 Manual bulletin parser - paste table format data and press Ctrl+D:"
+  @echo "Example: | APSB25-XX : Security update for Adobe Product | MM/DD/YYYY | MM/DD/YYYY |"
+  @echo ""
+  go run cmd/manual-parser/main.go
+  @echo "🏗️  Generating Hugo content..."
+  go run cmd/content-generator/main.go generate
+  @echo "✅ Manual parsing and content generation complete!"
+
+update: scrape ## alias for scrape command
