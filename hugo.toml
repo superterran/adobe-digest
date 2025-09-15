@@ -19,7 +19,7 @@ poweredBy = "Powered by Github Pages"
   
   # Footer configuration
   [params.footer]
-    enable = true
+    enable = false
     copyright = "Doug Hatcher"
     poweredBy = "Powered by Github Pages"
   
