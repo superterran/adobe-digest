@@ -14,8 +14,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #CC0000 0%, #A0261C 50%, #800000 100%);
+            color: #e2e8f0;
+            background: #0f0f0f;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -23,115 +23,211 @@
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 3rem;
+            background: #1a1a1a;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
             text-align: center;
+            border: 1px solid #2a2a2a;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ef4444, #f97316);
         }
         
         .logo {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            color: #800000;
+            color: #ef4444;
             margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(239,68,68,0.3);
         }
         
         .tagline {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
         }
         
         .description {
             font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            color: #555;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
         }
         
         .stat-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid #FF0000;
+            background: #141414;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid #2a2a2a;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ef4444, #f97316);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-color: #ef4444;
+        }
+        
+        .stat-card:hover .stat-number {
+            color: #f97316;
+            transform: scale(1.1);
+            text-shadow: 0 0 20px rgba(249,115,22,0.5);
         }
         
         .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #E34F26;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ef4444;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
         }
         
         .stat-label {
-            color: #666;
-            font-size: 0.9rem;
+            color: #94a3b8;
+            font-size: 0.875rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.05em;
+            font-weight: 500;
         }
         
         .links {
-            margin-top: 2rem;
+            margin-top: 3rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         
         .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            margin: 0 8px;
-            background: #FF0000;
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #ef4444, #f97316);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: 600;
             transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(239,68,68,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
         }
         
         .btn:hover {
-            background: #E34F26;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+            background: linear-gradient(135deg, #dc2626, #ea580c);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(239,68,68,0.5);
         }
         
         .btn-secondary {
-            background: transparent;
-            color: #FF0000;
-            border: 2px solid #FF0000;
+            background: #1a1a1a;
+            color: #e2e8f0;
+            border: 2px solid #2a2a2a;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
         
         .btn-secondary:hover {
-            background: #FF0000;
-            color: white;
+            background: #2a2a2a;
+            border-color: #3a3a3a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
         
         .footer {
-            margin-top: 2rem;
+            margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid #eee;
-            color: #888;
+            border-top: 1px solid #2a2a2a;
+            color: #94a3b8;
             font-size: 0.9rem;
+        }
+        
+        .footer p {
+            margin-bottom: 1rem;
         }
         
         @media (max-width: 768px) {
             .container {
                 margin: 1rem;
-                padding: 1.5rem;
+                padding: 2rem;
             }
             
             .logo {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             .stats {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stat-card {
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
             }
         }
     </style>
@@ -170,8 +266,8 @@
             <p><strong>How it works:</strong> We automatically scrape Adobe's security bulletin page, clean and structure the data, then generate this static site with Hugo. All data is sourced directly from Adobe's official security advisories.</p>
             <p style="margin-top: 1rem;"><em>This is an unofficial community resource. Always refer to Adobe's official advisories for authoritative information.</em></p>
             <p style="margin-top: 1.5rem; font-size: 0.8rem; opacity: 0.7;">
-                Brought to you by <a href="https://doughatcher.com" style="color: #FF0000; text-decoration: none;">Doug Hatcher</a> & 
-                <a href="https://blueacornici.com" style="color: #FF0000; text-decoration: none;">Blue Acorn iCi</a>
+                Brought to you by <a href="https://doughatcher.com" style="color: #ef4444; text-decoration: none; font-weight: 600;">Doug Hatcher</a> & 
+                <a href="https://blueacornici.com" style="color: #ef4444; text-decoration: none; font-weight: 600;">Blue Acorn iCi</a>
             </p>
         </div>
     </div>

@@ -1,6 +1,8 @@
 baseURL = "https://adobedigest.com"
 languageCode = "en-us"
 title = "Adobe Digest"
+copyright = "Doug Hatcher"
+poweredBy = "Powered by Github Pages"
 
 # Enable Hugo modules
 [module]
@@ -18,6 +20,9 @@ title = "Adobe Digest"
   # Footer configuration
   [params.footer]
     enable = true
+    copyright = "Doug Hatcher"
+    poweredBy = "Powered by Github Pages"
+  
   
   # Enable search
   [params.search]
